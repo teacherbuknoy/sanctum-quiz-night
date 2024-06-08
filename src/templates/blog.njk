@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title | safe }}</title>
+  </head>
+  <body>
+    {% include "navigation.njk" %}
+    <main>
+      <header>
+        <hgroup role="group">
+          <h1 id="{{ title | slugify | safe }}">{{ title | safe }}</h1>
+          <p>{{ description | safe }}</p>
+          <time datetime="{{ page.date | machineReadableDate }}">{{ page.date | humanReadableDate }}</time>
+        </hgroup>
+      </header>
+      {{ content | safe }}
+    </main>
+  </body>
+</html>

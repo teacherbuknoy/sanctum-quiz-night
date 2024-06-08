@@ -1,0 +1,4 @@
+{
+  "permalink": "/blogs/{{ title | slugify }}/",
+  "layout": "blog.njk"
+}
