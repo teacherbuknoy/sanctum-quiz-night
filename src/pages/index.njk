@@ -3,4 +3,26 @@ title: Homepage
 permalink: /
 ---
 
-<h1>Home</h1>
+<h1>Sanctum Quiz Night</h1>
+
+<form name="registration">
+  <div class="input-field">
+    <label for="username">Username</label>
+    <input type="text" required name="username" id="username">
+  </div>
+
+  <button class="primary button">Join</button>
+</form>
+
+<script>
+  const registration = document.forms['registration']
+  registration.addEventListener('submit', event => {
+    event.preventDefault()
+    const username = registration['username'].value
+    console.log(username)
+  })
+
+  function register(username) {
+    
+  }
+</script>

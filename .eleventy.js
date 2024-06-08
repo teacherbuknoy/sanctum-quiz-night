@@ -18,6 +18,6 @@ module.exports = function (config) {
       includes: 'components',
       data: 'data'
     },
-    templateFormats: ['md', 'html', 'njk']
+    templateFormats: ['md', 'html', 'njk', '11ty.js']
   }
 }
