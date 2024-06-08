@@ -4,14 +4,24 @@ class Players {
   }
 
   async register(username) {
-    const result = await fetch(this.endpoint, {
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ username: result })
-    })
+    return new Promise(async (resolve, reject) => {
+      const result = await fetch(this.endpoint, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username })
+      }).catch(error => reject(error))
 
-    return result.ok
+      resolve({
+        ok: result.ok,
+        status: result.status,
+        statusText: result.statusText,
+        error: await result.text()
+      })
+    })
   }
 }
 

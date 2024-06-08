@@ -12,17 +12,27 @@ permalink: /
   </div>
 
   <button class="primary button">Join</button>
+  <output name="output"></output>
 </form>
 
 <script>
   const registration = document.forms['registration']
-  registration.addEventListener('submit', event => {
+  const output = registration.elements['output']
+
+  registration.addEventListener('submit', async event => {
     event.preventDefault()
     const username = registration['username'].value
-    console.log(username)
-  })
+    const result = await registerPlayer(username).catch(error => {
+      console.log('[ERROR]', error)
+      output.value = error
+    });
 
-  function register(username) {
-    
-  }
+    console.log(result)
+
+    if (!result.ok) {
+      output.value = 'Something went wrong'
+    } else {
+      window.location.replace('/join')
+    }
+  })
 </script>
