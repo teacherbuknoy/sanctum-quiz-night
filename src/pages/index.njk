@@ -32,6 +32,7 @@ permalink: /
     if (!result.ok) {
       output.value = 'Something went wrong'
     } else {
+      localStorage.setItem('sanctum_player_id', result.player.id)
       window.location.replace('/join')
     }
   })

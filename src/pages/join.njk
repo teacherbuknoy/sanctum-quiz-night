@@ -1,0 +1,34 @@
+---
+title: Join Sanctum Quiz Night
+permalink: /join/
+---
+
+<h1>Sanctum Quiz Night</h1>
+
+<p>
+  You are playing as <strong id="ui_username"></strong>
+</p>
+
+<h2>Other players</h2>
+<ul id="ui_players"></ul>
+
+<script defer>
+  async function initialize() {
+    const me = (await getCurrentPlayer()).player
+    ui_username.innerText = me.username
+    ui_username.dataset.playerId = me.id
+
+    populatePlayers()
+  }
+
+  async function populatePlayers() {
+    const players = (await getAllPlayers()).players
+    console.log(players)
+    const items = players.map(player => `<li><b data-player-id=${player.id}>${player.username}</b></li>`)
+    ui_players.innerHTML = items.join('\n')
+  }
+
+  document.addEventListener('DOMContentLoaded', e => {
+    initialize()
+  })
+</script>
