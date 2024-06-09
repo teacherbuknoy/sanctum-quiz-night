@@ -1,6 +1,24 @@
 class Players {
   constructor() {
     this.endpoint = 'https://deciding-seal-cleanly.ngrok-free.app/players'
+    this.options = {
+      mode: 'cors',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+      }
+    }
+  }
+
+  async kick(uuid) {
+    return new Promise(async (resolve, reject) => {
+      const result = await fetch(`${this.endpoint}/${uuid}`, {
+        method: 'DELETE',
+        ...this.options
+      }).catch(error => reject(error))
+
+      resolve(result)
+    })
   }
 
   async register(username) {

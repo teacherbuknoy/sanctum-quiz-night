@@ -19,6 +19,12 @@ async function getAllPlayers() {
   return await players.getAll()
 }
 
+async function kickPlayer(uuid) {
+  const players = new Players()
+  return await players.kick(uuid)
+}
+
 window.registerPlayer = registerPlayer
 window.getCurrentPlayer = getCurrentPlayer
 window.getAllPlayers = getAllPlayers
+window.kickPlayer = kickPlayer

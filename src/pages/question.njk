@@ -1,0 +1,75 @@
+---
+title: Sanctum Quiz Night
+permalink: /play/
+---
+<h1>Sanctum Quiz Night</h1>
+
+<form name="player-add">
+  <h2>Add player</h2>
+  <label for="username">Username</label>
+  <input type="text" name="username" id="username">
+  <button>Submit</button>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>Player</th>
+      <th>Score</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody id="ui_players"></tbody>
+</table>
+
+<script>
+  document.addEventListener('DOMContentLoaded', e => {
+    initialize()
+  })
+
+  function initialize() {
+    populatePlayers()
+
+    ui_players.addEventListener('click', async e => {
+      if (e.target.matches('button[data-player]')) {
+        const button = e.target
+        await executeAction(button.dataset.player, button.dataset.action)
+      }
+    })
+  }
+
+  async function executeAction(player, action) {
+    console.log({player, action})
+
+    switch (action) {
+      case 'kick':
+        await kickPlayer(player)
+        break;
+    }
+
+    await populatePlayers()
+  }
+
+  async function kickPlayer(player) {
+    await kickPlayer(player)
+  }
+
+  async function populatePlayers() {
+    const players = (await getAllPlayers())
+      .players
+
+      console
+      .log(players)
+    const items = players.map(player => `
+      <tr data-player="${player.id}">
+        <th>${player.username}</th>
+        <td>${player.score}</td>
+        <td>
+          <button data-player="${player.id}" data-action="add-score">+</button>
+          <button data-player="${player.id}" data-action="subtract-score">-</button>
+          <button data-player="${player.id}" data-action="kick">Kick</button>
+        </td>
+      </tr>`)
+    ui_players.innerHTML = items.join('\n')
+  }
+</script>

@@ -12,6 +12,18 @@ permalink: /join/
 <h2>Other players</h2>
 <ul id="ui_players"></ul>
 
+<section>
+  <h2>Question</h2>
+  <button data-choice="A">Lady Gaga</button>
+  <button data-choice="B">Katy Perry</button>
+  <button data-choice="C"></button>
+  <button data-choice="D"></button>
+</section>
+
+<section>
+  <h2>Answers</h2>
+</section>
+
 <script defer>
   async function initialize() {
     const me = (await getCurrentPlayer()).player
@@ -22,8 +34,10 @@ permalink: /join/
   }
 
   async function populatePlayers() {
-    const players = (await getAllPlayers()).players
-    console.log(players)
+    const players = (await getAllPlayers())
+      .players
+      console
+      .log(players)
     const items = players.map(player => `<li><b data-player-id=${player.id}>${player.username}</b></li>`)
     ui_players.innerHTML = items.join('\n')
   }
