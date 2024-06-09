@@ -36,6 +36,25 @@ permalink: /play/
         await executeAction(button.dataset.player, button.dataset.action)
       }
     })
+
+    const registration = document.forms['player-add']
+    registration.addEventListener('submit', async e => {
+      e.preventDefault()
+      const username = registration['username'].value
+      const result = await registerPlayer(username).catch(error => {
+        console.log('[ERROR]', error)
+        output.value = error
+      });
+
+      console.log(result)
+
+      if (!result.ok) {
+        output.value = 'Something went wrong'
+      } else {
+        populatePlayers()
+        registration.reset()
+      }
+    })
   }
 
   async function executeAction(player, action) {
