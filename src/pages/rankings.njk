@@ -1,0 +1,85 @@
+---
+title: Sanctum Quiz Night
+permalink: /rankings/
+---
+<header>
+  <div class="logo">
+    <div class="icon">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M30.6281 26.5961C28.489 29.6284 25.3635 31.9149 21.7186 32.989C19.9024 30.7391 17.7114 28.6158 15.2645 26.7565C15.9542 25.6303 16.7426 24.4574 17.6098 23.2886C21.8284 25.2581 26.3018 26.3549 30.6281 26.5961ZM17.3143 22.0766C15.5692 21.2252 13.8826 20.1943 12.3287 19.028C15.8066 11.9188 18.1168 4.34892 17.3291 0.333008C23.5198 0.45286 28.8837 3.94844 31.6566 9.05545C26.8866 10.7522 21.531 16.3389 17.3143 22.0766ZM13.8134 0.634187C16.1091 5.63767 14.3496 12.6604 11.6275 18.4852C7.49303 15.1849 4.43632 10.9212 3.97757 6.59467C6.40008 3.56564 9.8572 1.40027 13.8134 0.634187ZM9.20424 22.9903C9.87876 21.8926 10.5481 20.6904 11.1777 19.4198C7.69777 16.7894 4.60297 13.4333 2.19349 9.33865C1.00495 11.632 0.333496 14.2366 0.333496 16.9981C0.333496 18.0735 0.435332 19.1251 0.629885 20.1439C3.57197 20.6439 6.46821 21.6368 9.20424 22.9903ZM11.8773 19.9351C11.2808 21.1138 10.6541 22.2749 10.0061 23.3997C11.5672 24.2214 13.071 25.1591 14.4957 26.1872C15.1894 25.1 15.9418 23.9846 16.7402 22.8684C15.0653 22.0312 13.4357 21.0538 11.8773 19.9351ZM0.99831 21.6743C3.47119 21.7386 6.17495 22.5038 8.76723 23.6859C7.36528 25.8682 5.97301 27.5668 4.8995 28.4601C3.10416 26.565 1.74915 24.2485 0.99831 21.6743ZM9.60615 24.0848C8.44222 26.0519 7.2172 27.893 5.98111 29.5039C7.437 30.7879 9.11885 31.8217 10.9594 32.5378C11.7093 30.8944 12.789 28.9161 14.1033 26.8092C12.7145 25.7985 11.1886 24.8681 9.60615 24.0848ZM18.2107 22.4958C22.2473 17.2838 27.7728 12.3808 33.0023 12.3229C33.4349 13.8062 33.6668 15.3751 33.6668 16.9981C33.6668 19.4484 33.1381 21.7752 32.1886 23.8707C28.2012 25.4136 23.0345 24.6548 18.2107 22.4958ZM12.3502 33.009C13.8261 33.4369 15.3863 33.6663 17.0002 33.6663C18.0872 33.6663 19.1499 33.5623 20.1789 33.3635L20.1765 33.363C19.249 31.4198 17.3199 29.2944 14.8812 27.3948C13.5612 29.6376 12.6623 31.6494 12.3502 33.009Z" fill="currentColor"/>
+      </svg>
+    </div>
+    <div class="type">
+      <span>The Sanctum</span></div>
+  </div>
+  <h1>
+    <span>Quiz Night</span></h1>
+</header>
+
+<ol id="ui_winners"></ol>
+
+<script>
+  document.addEventListener('DOMContentLoaded', e => {
+    initialize()
+  })
+
+  const prizes = ['P 600.00', 'P 400.00', 'P 200.00']
+
+  function initialize() {
+    populatePlayers()
+
+    const registration = document.forms['player-add']
+    registration.addEventListener('submit', async e => {
+      e.preventDefault()
+      const username = registration['username'].value
+      const result = await registerPlayer(username).catch(error => {
+        console.log('[ERROR]', error)
+        output.value = error
+      });
+
+      console.log(result)
+
+      if (!result.ok) {
+        output.value = 'Something went wrong'
+      } else {
+        populatePlayers()
+        registration.reset()
+      }
+    })
+  }
+
+  async function populatePlayers() {
+    const players = (await getAllPlayers())
+      .players
+
+      console
+      .log(players)
+    const items = players
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 3)
+      .map((player, index) => `
+      <li data-player="${player.id}">
+        <span class="prize">${prizes[index]}</span>
+        <img class="ribbon" width="200" height="200" src="/assets/images/ribbon-${index}.png" alt="${getWinPlace(index)}">
+        <div class="winner">
+          <span class="winner-name">${player.username}</span>
+          <span class="winner-place">${getWinPlace(index)}</span>
+        </div>
+        <span class="score">${player.score} pts</span>
+      </li>
+      `)
+
+    ui_winners.innerHTML = items.join('\n')
+  }
+
+  function getWinPlace(num) {
+    switch(num) {
+      case 0:
+        return "Sanctum Quiz Master"
+      case 1:
+        return "2nd Place"
+      case 2:
+        return "3rd place"
+    }
+  }
+</script>

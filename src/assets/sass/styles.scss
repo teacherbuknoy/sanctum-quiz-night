@@ -155,3 +155,59 @@ thead th {
 tbody tr:nth-child(2n) {
   background-color: #fff1;
 }
+
+#ui_winners li::marker {
+  color: transparent;
+}
+
+#ui_winners {
+  margin       : 0;
+  padding      : 0;
+  width        : min(75%, 100ch);
+  margin-inline: auto;
+}
+
+#ui_winners li {
+  display         : flex;
+  gap             : 1rem;
+  align-items     : center;
+  background-image: radial-gradient(ellipse at center, #FFE175, #FFC194);
+  border-radius   : 1000px;
+  padding-inline  : 3ch;
+  padding-block   : 0.3ch;
+  box-shadow      : 0 0 8px rgba(0, 0, 0, .3333333333), 0 0 0 16px #fff, 0 0 24px rgba(0, 0, 0, .3333333333);
+  margin-block    : 3rem;
+  font-family     : 'Bowlby One SC', sans-serif;
+  text-transform  : uppercase;
+}
+
+.ribbon {
+  height      : 8rem;
+  width       : auto;
+  margin-block: -2rem;
+}
+
+.prize,
+.winner,
+.score {
+  background-image: linear-gradient(to bottom, #FF4A4A, #b40001AA);
+  color           : transparent;
+  background-clip : text;
+}
+
+.prize {
+  font-size: 3rem;
+}
+
+.winner {
+  display: grid;
+}
+
+.winner-name {
+  font-size: 2rem;
+}
+
+.score {
+  margin-inline-start: auto;
+  font-size          : 1.5rem;
+}
