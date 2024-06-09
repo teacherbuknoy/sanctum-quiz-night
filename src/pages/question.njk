@@ -36,7 +36,9 @@ permalink: /play/
       <tbody id="ui_players"></tbody>
     </table>
   </div>
-  <div class="sidebar"><iframe src="https://www.multibuzz.app/YXVBJH" frameborder="0"></iframe></div>
+  <div class="sidebar">
+    <iframe src="https://www.multibuzz.app/YXVBJH" frameborder="0"></iframe>
+  </div>
 </div>
 
 <script>
@@ -102,7 +104,9 @@ permalink: /play/
 
       console
       .log(players)
-    const items = players.map(player => `
+    const items = players
+      .sort((a, b) => (a.username > b.username) ? 1 : (b.username > a.username) ? -1 : 0)
+      .map(player => `
       <tr data-player="${player.id}">
         <th>${player.username}</th>
         <td>${player.score}</td>
