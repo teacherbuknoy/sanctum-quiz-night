@@ -1,6 +1,7 @@
 const collections = require('./src/config/collections.js')
 const filters = require('./src/config/filters.js') 
 const watchtargets = require('./src/config/watchtargets.js')
+const passthroughs = require('./src/config/passthroughs.js')
 
 module.exports = function (config) {
   Object.keys(collections).forEach(collectionType => {
@@ -13,6 +14,10 @@ module.exports = function (config) {
 
   Object.keys(watchtargets).forEach(name => {
     config.addWatchTarget(watchtargets[name]())
+  })
+
+  Object.keys(passthroughs).forEach(name => {
+    config.addPassthroughCopy(passthroughs[name]())
   })
 
   return {

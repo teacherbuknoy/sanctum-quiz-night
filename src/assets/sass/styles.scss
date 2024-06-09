@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
+
+:root {
+  --primary-color: #0037a3;
+}
+
+body {
+  background-image   : url("/assets/images/crown.png"), radial-gradient(circle at top center, #739AFF, #0047FF);
+  background-position: top center;
+  background-repeat  : no-repeat;
+  background-size    : 10rem, cover;
+  margin             : 0;
+  min-height         : 100vh;
+  padding            : 1rem;
+  padding-block-start: 10rem;
+}
+
+h1 {
+  align-items: center;
+  display    : flex;
+  font-family: "Bowlby One SC", sans-serif;
+  font-size  : 4rem;
+  font-style : normal;
+  font-weight: 400;
+  gap        : 3rem;
+  margin     : 0;
+  text-align : center;
+}
+
+h1 span {
+  background-image: linear-gradient(to bottom, #FFE175, #FFC194);
+  color           : transparent;
+  background-clip : text;
+  filter          : drop-shadow(0 3px 0 #FF4A4A) drop-shadow(0 3px 0 #D73333) drop-shadow(0 2px 0 #CA3F3F) drop-shadow(0 5px 0 #0041BF) drop-shadow(0 -5px 0 #0041BF) drop-shadow(5px 0 0 #0041BF) drop-shadow(-5px 0 0 #0041BF) drop-shadow(0 5px 0 #fff) drop-shadow(0 -5px 0 #fff) drop-shadow(5px 0 0 #fff) drop-shadow(-5px 0 0 #fff) drop-shadow(0 3px 6px #0005);
+}
+
+h1::before,
+h1::after {
+  aspect-ratio     : 1/1;
+  background-image : url('/assets/images/flaglets.png');
+  background-repeat: no-repeat;
+  background-size  : cover;
+  content          : '';
+  display          : block;
+  height           : auto;
+  width            : 6rem;
+}
+
+main {
+  display: grid;
+}
+
+header {
+  display       : flex;
+  flex-direction: column;
+  align-items   : center;
+}
+
+.logo {
+  border        : 2px solid var(--primary-color);
+  color         : var(--primary-color);
+  display       : flex;
+  font-family   : "BBC Reith Sans XBold", sans-serif;
+  font-weight   : 900;
+  text-transform: uppercase;
+  width         : fit-content;
+}
+
+.logo>* {
+  align-items: center;
+  display    : flex;
+  padding    : 0.5ch;
+}
+
+.icon svg {
+  aspect-ratio: 1/1;
+  width       : auto;
+  height      : 1rem;
+}
+
+.logo .type {
+  font-size       : 1rem;
+  font-weight     : 900;
+  color           : white;
+  background-color: var(--primary-color);
+  line-height     : 1;
+  align-items     : center;
+}
+
+.logo .type span {
+  position: relative;
+  bottom  : -0.2ch;
+}
