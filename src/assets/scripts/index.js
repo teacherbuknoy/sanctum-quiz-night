@@ -24,7 +24,20 @@ async function kickPlayer(uuid) {
   return await players.kick(uuid)
 }
 
+async function addScore(uuid) {
+  const players = new Players()
+  return await players.addScore(uuid)
+}
+
+async function subtractScore(uuid) {
+  const players = new Players()
+  return await players.subtractScore(uuid)
+}
+
+
 window.registerPlayer = registerPlayer
 window.getCurrentPlayer = getCurrentPlayer
 window.getAllPlayers = getAllPlayers
 window.kickPlayer = kickPlayer
+window.addScore = addScore
+window.subtractScore = subtractScore

@@ -45,6 +45,12 @@ permalink: /play/
       case 'kick':
         await kickPlayer(player)
         break;
+      case 'subtract-score':
+        await subtractScore(player)
+        break;
+      case 'add-score':
+        await addScore(player)
+        break;
     }
 
     await populatePlayers()
