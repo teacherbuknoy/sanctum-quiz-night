@@ -12,7 +12,9 @@ body {
   margin             : 0;
   min-height         : 100vh;
   padding            : 1rem;
+  color              : white;
   padding-block-start: 10rem;
+  font-family        : 'BBC Reith Sans', sans-serif;
 }
 
 h1 {
@@ -90,4 +92,66 @@ header {
 .logo .type span {
   position: relative;
   bottom  : -0.2ch;
+}
+
+form[name="player-add"] {
+  align-items          : center;
+  display              : grid;
+  gap                  : 1rem;
+  grid-template-columns: repeat(3, auto);
+  margin               : auto;
+  padding              : 5ch;
+  width                : fit-content;
+}
+
+form[name="player-add"] h2 {
+  grid-column: 1/-1;
+  margin     : 0;
+  line-height: 1;
+  text-align : center;
+}
+
+input[type="text"] {
+  border       : none;
+  border-radius: 5px;
+  padding      : 0.5ch 1ch;
+}
+
+button {
+  background-color: #ffce87;
+  border          : none;
+  border-radius   : 5px;
+  box-shadow      : 0 2px 4px #0003;
+  cursor          : pointer;
+  font-size       : inherit;
+  font-weight     : bold;
+  padding         : 0.5ch 2ch;
+}
+
+table {
+  width           : min(90%, 75ch);
+  margin          : auto;
+  background-color: #fff1;
+  border-radius   : 16px;
+  border-collapse : collapse;
+  overflow        : hidden;
+}
+
+thead {
+  background-color: #0003;
+}
+
+th,
+td {
+  padding   : 0.5ch 1ch;
+  text-align: center;
+}
+
+thead th {
+  text-transform: uppercase;
+  font-family   : 'BBC Reith Sans XBold';
+}
+
+tbody tr:nth-child(2n) {
+  background-color: #fff1;
 }
