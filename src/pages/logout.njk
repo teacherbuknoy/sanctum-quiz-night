@@ -1,0 +1,10 @@
+---
+title: Homepage
+permalink: /logout/
+---
+
+<script>
+  localStorage.removeItem('sanctum_auth_code')
+  localStorage.removeItem('sanctum_auth_role')
+  window.location.replace('/')
+</script>
