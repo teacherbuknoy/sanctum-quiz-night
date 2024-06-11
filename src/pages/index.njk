@@ -22,7 +22,7 @@ permalink: /
   <label for="auth_code">Authorization Code</label>
   <input type="password" required name="auth_code" id="auth_code">
   <button class="primary button">Join</button>
-  <p style="text-align: center; grid-column: 1/-1">Or <a href="/play/" class="link">just go to the leaderboards</a></p>
+  <p style="text-align: center; grid-column: 1/-1">Or <button id="ui_link_leaderboards" type="button" class="link">just go to the leaderboards</button></p>
 </form>
 
 <script>
@@ -46,5 +46,14 @@ permalink: /
     } else {
       alert("Incorrect authorization code")
     }
+  })
+
+  ui_link_leaderboards.addEventListener('click', e => {
+    localStorage.removeItem('sanctum_auth_code')
+    localStorage.removeItem('sanctum_auth_role')
+
+    const a = document.createElement('a')
+    a.href = '/play'
+    a.click()
   })
 </script>

@@ -100,7 +100,7 @@ form {
   gap                  : 1rem;
   grid-template-columns: repeat(3, auto);
   margin               : auto;
-  padding              : 5ch;
+  padding-block-start  : 5ch;
   width                : fit-content;
 }
 
@@ -129,12 +129,13 @@ button {
 }
 
 table {
-  width           : min(90%, 75ch);
-  margin          : auto;
-  background-color: #fff1;
-  border-radius   : 16px;
-  border-collapse : collapse;
-  overflow        : hidden;
+  background-color   : #fff1;
+  border-collapse    : collapse;
+  border-radius      : 16px;
+  margin             : auto;
+  overflow           : hidden;
+  margin-block-start: 5ch;
+  width              : min(90%, 75ch);
 }
 
 thead {
@@ -233,4 +234,9 @@ tbody tr:nth-child(2n) {
   color           : transparent;
   background-image: linear-gradient(to bottom, #FFE175, #FFC194);
   background-clip : text;
+  box-shadow      : none;
+  border          : none;
+  display         : inline;
+  font            : inherit;
+  padding         : 0;
 }

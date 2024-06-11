@@ -18,7 +18,7 @@ permalink: /play/
 
 <div class="app">
   <div class="main">
-    <form name="player-add">
+    <form id="ui_add_player" name="player-add">
       <h2>Add player</h2>
       <label for="username">Username</label>
       <input type="text" name="username" id="username">
@@ -105,7 +105,12 @@ permalink: /play/
       console
       .log(players)
     const items = players
-      .sort((a, b) => (a.username > b.username) ? 1 : (b.username > a.username) ? -1 : 0)
+      .sort(
+        (a, b) => (a.username > b.username)
+        ? 1
+        : (b.username > a.username)
+          ? -1
+          : 0)
       .map(player => `
       <tr data-player="${player.id}">
         <th>${player.username}</th>
@@ -114,17 +119,21 @@ permalink: /play/
       </tr>`)
     ui_players.innerHTML = items.join('\n')
 
-    if(!userIsAdmin()) {
+    console.log("[ADMIN]", !userIsAdmin())
+    if (!userIsAdmin()) {
+      console.log('Hiding actions')
       ui_header_actions.style.display = 'none'
+      
+      console.log('Hiding form')
+      ui_add_player.style.display = 'none'
     }
   }
-
 
   function userIsAdmin() {
     return localStorage.getItem('sanctum_auth_role') === 'admin'
   }
   function renderPlayerActions(player) {
-    if(userIsAdmin()) {
+    if (userIsAdmin()) {
       return `
       <td>
         <button data-player="${player.id}" data-action="add-score">+</button>
