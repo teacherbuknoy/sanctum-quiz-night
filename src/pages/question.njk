@@ -51,6 +51,7 @@ permalink: /play/
     ui_players.addEventListener('click', async e => {
       if (e.target.matches('button[data-player]')) {
         const button = e.target
+        button.classList.add('loading')
         executeActionWS(button.dataset.player, button.dataset.action)
       }
     })

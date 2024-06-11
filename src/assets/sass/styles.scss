@@ -240,3 +240,26 @@ tbody tr:nth-child(2n) {
   font            : inherit;
   padding         : 0;
 }
+
+@keyframes spin {
+  to { rotate: 360deg }
+}
+
+.loading {
+  padding-inline-start: 0.25ch;
+}
+
+.loading::before {
+  content                 : '';
+  display                 : inline-block;
+  width                   : 1.5ch;
+  height                  : auto;
+  aspect-ratio            : 1/1;
+  border                  : 3px solid #0005;
+  margin-inline-end       : var(--gap);
+  --gap                   : 0.25ch;
+  border-radius           : 100%;
+  border-block-start-color: #000;
+  box-sizing              : border-box;
+  animation               : spin 1000ms infinite;
+}
