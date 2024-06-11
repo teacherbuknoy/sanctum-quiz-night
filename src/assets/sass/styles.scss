@@ -94,7 +94,7 @@ header {
   bottom  : -0.2ch;
 }
 
-form[name="player-add"] {
+form {
   align-items          : center;
   display              : grid;
   gap                  : 1rem;
@@ -104,14 +104,14 @@ form[name="player-add"] {
   width                : fit-content;
 }
 
-form[name="player-add"] h2 {
+form h2 {
   grid-column: 1/-1;
   margin     : 0;
   line-height: 1;
   text-align : center;
 }
 
-input[type="text"] {
+input:is([type="text"], [type="password"]) {
   border       : none;
   border-radius: 5px;
   padding      : 0.5ch 1ch;
@@ -224,4 +224,13 @@ tbody tr:nth-child(2n) {
   position          : sticky;
   top               : 1rem;
   width             : 100%;
+}
+
+.link {
+  text-align      : center;
+  margin-inline   : auto;
+  grid-column     : 1/-1;
+  color           : transparent;
+  background-image: linear-gradient(to bottom, #FFE175, #FFC194);
+  background-clip : text;
 }

@@ -35,21 +35,17 @@ async function subtractScore(uuid) {
 }
 
 async function checkAuth() {
-  const isHomePage = window.location.pathname === '/'
+  const code = localStorage.getItem('sanctum_auth_code')
+  const players = new Players()
+  const isAuthenticated = await players.isAdmin(code)
+  console.log({ isAuthenticated })
 
-  if (!isHomePage) {
-    const code = localStorage.getItem('sanctum_auth_code')
-    const players = new Players()
-    const isAuthenticated = await players.isAdmin(code)
-    console.log({ isAuthenticated })
-
-    if (isAuthenticated) {
-      localStorage.setItem('sanctum_auth_role', 'admin')
-    }
+  if (isAuthenticated) {
+    localStorage.setItem('sanctum_auth_role', 'admin')
   }
-}
 
-checkAuth()
+  return isAuthenticated
+}
 
 window.registerPlayer = registerPlayer
 window.getCurrentPlayer = getCurrentPlayer
@@ -57,3 +53,4 @@ window.getAllPlayers = getAllPlayers
 window.kickPlayer = kickPlayer
 window.addScore = addScore
 window.subtractScore = subtractScore
+window.checkAuth = checkAuth
