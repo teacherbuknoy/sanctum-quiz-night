@@ -82,7 +82,7 @@ permalink: /play/
   }
 
   function __websocket() {
-    const socket = new WebSocket('ws://deciding-seal-cleanly.ngrok-free.app/play')
+    const socket = new WebSocket('wss://deciding-seal-cleanly.ngrok-free.app/play')
 
     socket.onmessage = function(event) {
       const data = JSON.parse(event.data)
