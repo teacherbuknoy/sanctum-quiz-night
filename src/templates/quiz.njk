@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title | safe }}</title>
+    {% include "meta/stylesheets.njk" %}
+  </head>
+  <body>
+    <main>
+      <article class="slide slide--cover">
+        {% include "ui/title-card.njk" %}
+        <h2>{{ title }}</h2>
+      </article>
+      {% for item in questions %}
+        <article class="slide">
+          <h3 class="question">{{ item.question | safe }}</h3>
+          <div class="choices">
+            {% for option in item.choices %}
+              <button data-status="{{ option.isCorrect if option.isCorrect else false }}">
+                {{ option.text }}
+              </button>
+            {% endfor %}
+          </div>
+        </article>
+      {% endfor %}
+    </main>
+  </body>
+</html>

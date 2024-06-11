@@ -1,0 +1,4 @@
+{
+  "permalink": "/quiz/{{ quizCode }}/",
+  "layout": "quiz.njk"
+}

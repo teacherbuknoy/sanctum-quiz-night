@@ -1,0 +1,12 @@
+---
+title: Quizzes
+permalink: /quiz/
+---
+
+{% include "ui/title-card.njk" %}
+
+<ul class="quiz-list">
+  {% for quiz in collections.quizzes %}
+    <li><a href="{{ quiz.url }}">{{ quiz.data.title }}</a></li>
+  {% endfor %}
+</ul>

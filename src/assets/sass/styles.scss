@@ -263,3 +263,38 @@ tbody tr:nth-child(2n) {
   box-sizing              : border-box;
   animation               : spin 1000ms infinite;
 }
+
+
+
+/* Inline #1 | http://localhost:8080/quiz/ */
+
+.quiz-list li {
+  list-style      : none;
+  background-color: #fff2;
+}
+
+.quiz-list li:nth-child(2n) {
+  background-color: #fffa;
+}
+
+.quiz-list {
+  overflow     : hidden;
+  margin-inline: auto;
+  width        : min(75ch, 90%);
+  border-radius: 6px;
+  padding      : 0;
+  margin-block : 5ch;
+}
+
+.quiz-list a {
+  font-size      : 1.6rem;
+  padding-inline : 2ch;
+  padding-block  : 0.5ch;
+  display        : block;
+  color          : white;
+  text-decoration: none;
+}
+
+.quiz-list a:hover {
+  text-decoration: underline;
+}

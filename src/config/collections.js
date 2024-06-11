@@ -8,5 +8,10 @@ module.exports = {
       'src/pages/*.html',
       'src/pages/*.njk',
     ])
+  },
+  quizzes: collections => {
+    return collections.getFilteredByGlob([
+      'src/quizzes/*.md'
+    ])
   }
 }
