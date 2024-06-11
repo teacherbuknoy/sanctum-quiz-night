@@ -83,7 +83,7 @@ permalink: /play/
   }
 
   function __websocket() {
-    const socket = new WebSocket('wss://sanctum.loca.lt/play')
+    const socket = new WebSocket('wss://sanctum.francisrub.io/play')
 
     socket.onmessage = function(event) {
       const data = JSON.parse(event.data)
