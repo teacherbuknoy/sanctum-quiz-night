@@ -1,10 +1,10 @@
 class Players {
   constructor() {
-    this.endpoint = 'https://deciding-seal-cleanly.ngrok-free.app/players'
     
-    this.domain = 'deciding-seal-cleanly.ngrok-free.app'
+    this.domain = API_DOMAIN
+    this.endpoint = `https://${this.domain}//players`
     this.endpoints = {
-      score: 'https://deciding-seal-cleanly.ngrok-free.app/score',
+      score: `https://${this.domain}/score`,
       auth: `https://${this.domain}/auth`
     }
 
@@ -13,6 +13,7 @@ class Players {
       headers: {
         'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
+        'bypass-tunnel-reminder': true
       }
     }
   }
@@ -56,11 +57,7 @@ class Players {
     return new Promise(async (resolve, reject) => {
       const result = await fetch(this.endpoint, {
         method: 'POST',
-        mode: 'cors',
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Content-Type': 'application/json',
-        },
+        ...this.options,
         body: JSON.stringify({ username })
       }).catch(error => reject(error))
 
@@ -77,12 +74,7 @@ class Players {
     return new Promise(async (resolve, reject) => {
       const result = await fetch(`${this.endpoint}/${uuid}`, {
         method: 'GET',
-        mode: 'cors',
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Content-Type': 'application/json',
-          'ngrok-skip-browser-warning': true
-        }
+        ...this.options
       }).catch(error => reject(error))
 
       resolve({
@@ -98,12 +90,7 @@ class Players {
     return new Promise(async (resolve, reject) => {
       const result = await fetch(this.endpoint, {
         method: 'GET',
-        mode: 'cors',
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Content-Type': 'application/json',
-          'ngrok-skip-browser-warning': true
-        }
+        ...this.options
       }).catch(error => reject(error))
 
       resolve({
