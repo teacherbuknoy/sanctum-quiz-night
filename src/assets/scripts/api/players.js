@@ -1,7 +1,7 @@
 class Players {
   constructor() {
     
-    this.domain = 'sanctum.loca.lt'
+    this.domain = 'sanctumapi.francisrub.io'
     this.endpoint = `https://${this.domain}/players`
     this.endpoints = {
       score: `https://${this.domain}/score`,
