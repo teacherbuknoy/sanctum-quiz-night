@@ -30,7 +30,7 @@ permalink: /play/
         <tr>
           <th>Player</th>
           <th>Score</th>
-          <th>Actions</th>
+          <th id="ui_header_actions">Actions</th>
         </tr>
       </thead>
       <tbody id="ui_players"></tbody>
@@ -110,12 +110,29 @@ permalink: /play/
       <tr data-player="${player.id}">
         <th>${player.username}</th>
         <td>${player.score}</td>
-        <td>
-          <button data-player="${player.id}" data-action="add-score">+</button>
-          <button data-player="${player.id}" data-action="subtract-score">-</button>
-          <button data-player="${player.id}" data-action="kick">Kick</button>
-        </td>
+        ${renderPlayerActions(player)}
       </tr>`)
     ui_players.innerHTML = items.join('\n')
+
+    if(!userIsAdmin()) {
+      ui_header_actions.style.display = 'none'
+    }
+  }
+
+
+  function userIsAdmin() {
+    return localStorage.getItem('sanctum_auth_role') === 'admin'
+  }
+  function renderPlayerActions(player) {
+    if(userIsAdmin()) {
+      return `
+      <td>
+        <button data-player="${player.id}" data-action="add-score">+</button>
+        <button data-player="${player.id}" data-action="subtract-score">-</button>
+        <button data-player="${player.id}" data-action="kick">Kick</button>
+      </td>`
+    }
+
+    return ''
   }
 </script>

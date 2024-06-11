@@ -34,6 +34,22 @@ async function subtractScore(uuid) {
   return await players.subtractScore(uuid)
 }
 
+async function checkAuth() {
+  const isHomePage = window.location.pathname === '/'
+
+  if (!isHomePage) {
+    const code = localStorage.getItem('sanctum_auth_code')
+    const players = new Players()
+    const isAuthenticated = await players.isAdmin(code)
+    console.log({ isAuthenticated })
+
+    if (isAuthenticated) {
+      localStorage.setItem('sanctum_auth_role', 'admin')
+    }
+  }
+}
+
+checkAuth()
 
 window.registerPlayer = registerPlayer
 window.getCurrentPlayer = getCurrentPlayer

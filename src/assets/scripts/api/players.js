@@ -2,8 +2,10 @@ class Players {
   constructor() {
     this.endpoint = 'https://deciding-seal-cleanly.ngrok-free.app/players'
     
+    this.domain = 'deciding-seal-cleanly.ngrok-free.app'
     this.endpoints = {
-      score: 'https://deciding-seal-cleanly.ngrok-free.app/score'
+      score: 'https://deciding-seal-cleanly.ngrok-free.app/score',
+      auth: `https://${this.domain}/auth`
     }
 
     this.options = {
@@ -110,6 +112,18 @@ class Players {
         statusText: result.statusText,
         players: await result.json()
       })
+    })
+  }
+
+  async isAdmin(code) {
+    return new Promise(async (resolve, reject) => {
+      const result = await fetch(this.endpoints.auth, {
+        method: 'POST',
+        ...this.options,
+        body: JSON.stringify({ auth: code })
+      }).catch(error => reject(false))
+
+      resolve(result.ok)
     })
   }
 }
