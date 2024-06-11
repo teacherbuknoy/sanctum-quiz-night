@@ -1,3 +1,13 @@
+const markdownIt = require('markdown-it')
+
+const md = markdownIt({ html: true, linkify: true, typographer: true })
+  .use(require('markdown-it-deflist'))
+  .use(require('markdown-it-abbr'))
+  .use(require('markdown-it-footnote'))
+  .use(require('markdown-it-attrs'))
+  .use(require('markdown-it-sup'))
+  .disable('code')
+
 module.exports = {
   humanReadableDate: value => {
     let formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' })
@@ -10,5 +20,8 @@ module.exports = {
     return `${year.toString().padStart(4, 0)}-${month
       .toString()
       .padStart(2, 0)}-${date.toString().padStart(2, 0)}`
+  },
+  markdown: function (value) {
+    return md.render(value)
   }
 }

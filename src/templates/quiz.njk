@@ -7,18 +7,20 @@
     {% include "meta/stylesheets.njk" %}
   </head>
   <body>
-    <main>
+    <main class="slide-container">
       <article class="slide slide--cover">
         {% include "ui/title-card.njk" %}
-        <h2>{{ title }}</h2>
+        <h2 class="title">{{ title }}</h2>
       </article>
       {% for item in questions %}
-        <article class="slide">
-          <h3 class="question">{{ item.question | safe }}</h3>
+        <article class="slide" aria-label="Question {{ loop.index }}">
+          <div class="question">
+            {{ item.question | markdown | safe }}
+          </div>
           <div class="choices">
             {% for option in item.choices %}
               <button data-status="{{ option.isCorrect if option.isCorrect else false }}">
-                {{ option.text }}
+                {{ option.text | safe }}
               </button>
             {% endfor %}
           </div>
