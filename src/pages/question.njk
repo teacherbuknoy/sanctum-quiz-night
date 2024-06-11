@@ -42,8 +42,64 @@ permalink: /play/
 </div>
 
 <script>
+  let socket
+  function initializeWS() {
+    console.log("Initialize WS")
+    populatePlayers()
+    socket = __websocket()
+
+    ui_players.addEventListener('click', async e => {
+      if (e.target.matches('button[data-player]')) {
+        const button = e.target
+        executeActionWS(button.dataset.player, button.dataset.action)
+      }
+    })
+
+    const registration = document.forms['player-add']
+    registration.addEventListener('submit', async e => {
+      e.preventDefault()
+
+      const username = registration['username'].value
+      socket.send(JSON.stringify({ command: 'register', username }))
+      registration.reset()
+    })
+  }
+
+  function executeActionWS(uuid, action) {
+    console.log({uuid, action})
+
+    switch (action) {
+      case 'kick':
+        socket.send(JSON.stringify({ command: 'kick', uuid }))
+        break;
+      case 'subtract-score':
+        socket.send(JSON.stringify({ command: 'score_subtract', uuid, points: 1 }))
+        break;
+      case 'add-score':
+        socket.send(JSON.stringify({ command: 'score_add', uuid, points: 1 }))
+        break;
+    }
+  }
+
+  function __websocket() {
+    const socket = new WebSocket('ws://deciding-seal-cleanly.ngrok-free.app/play')
+
+    socket.onmessage = function(event) {
+      const data = JSON.parse(event.data)
+      const command = data.command
+      console.log(data)
+
+      if(['score_add', 'score_subtract', 'kick', 'register'].includes(command)) {
+        populatePlayers()
+      }
+    }
+
+    return socket
+  }
+</script>
+<script>
   document.addEventListener('DOMContentLoaded', e => {
-    initialize()
+    initializeWS()
   })
 
   function initialize() {
@@ -123,7 +179,7 @@ permalink: /play/
     if (!userIsAdmin()) {
       console.log('Hiding actions')
       ui_header_actions.style.display = 'none'
-      
+
       console.log('Hiding form')
       ui_add_player.style.display = 'none'
     }
@@ -132,6 +188,7 @@ permalink: /play/
   function userIsAdmin() {
     return localStorage.getItem('sanctum_auth_role') === 'admin'
   }
+
   function renderPlayerActions(player) {
     if (userIsAdmin()) {
       return `
