@@ -1,8 +1,8 @@
 class Players {
   constructor() {
     
-    this.domain = API_DOMAIN
-    this.endpoint = `https://${this.domain}//players`
+    this.domain = 'sanctum.loca.lt'
+    this.endpoint = `https://${this.domain}/players`
     this.endpoints = {
       score: `https://${this.domain}/score`,
       auth: `https://${this.domain}/auth`
