@@ -16,6 +16,16 @@ socket.onmessage = function (event) {
     case 'show_correct':
       quiz.correctAnswer = data.params.choice
       break
+    case 'show_answer':
+      const { choice, isCorrect } = data.params
+      const btnChoice = quiz.element.querySelector(`[data-choice=${choice}]`)
+      if (isCorrect) {
+        btnChoice.classList.add('correct')
+      } else {
+        btnChoice.classList.add('wrong')
+        setTimeout(() => btnChoice.classList.remove('wrong'), 2000)
+      }
+      break
   }
 }
 
@@ -25,7 +35,10 @@ if (isAdmin()) {
       const choice = button.dataset.choice
       socket.send(JSON.stringify({
         command: 'show_answer',
-        params: { choice }
+        params: {
+          choice,
+          isCorrect: button.classList.contains('correct-for-admin')
+        }
       }))
     })
   })
