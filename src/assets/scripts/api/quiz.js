@@ -73,11 +73,35 @@ class Quiz {
     console.log("ADMIN?", isAdmin())
     item.choices.forEach((option, idx) => {
       this.ui.choices[idx].innerText = option.text
+      this.ui.choices[idx].classList.remove('correct-for-admin')
+      this.ui.choices[idx].classList.remove('correct')
+      this.ui.choices[idx].classList.remove('wrong')
       
       if (isAdmin() && option.isCorrect) {
         this.ui.choices[idx].classList.add('correct-for-admin')
       }
     })
+  }
+
+  showCorrectAnswer() {
+    if (isAdmin()) {
+      const btnCorrect = this.element.querySelector('[data-choice].correct-for-admin')
+      btnCorrect.classList.add('correct')      
+    }
+  }
+
+  get correctAnswer() {
+    if (isAdmin()) {
+      const btnCorrect = this.element.querySelector('[data-choice].correct-for-admin')
+      return btnCorrect.dataset.choice
+    } else {
+      return null
+    }
+  }
+
+  set correctAnswer(value) {
+    this.element.querySelector(`[data-choice=${value}]`)
+      .classList.add('correct', 'correct-for-admin')
   }
 }
 

@@ -5,12 +5,18 @@ function isAdmin() {
 }
 
 const quiz = new Quiz(ui_slide_container, window.questions)
-quiz.start()
 
 const socket = new WebSocket('wss://sanctumapi.francisrub.io/quiz')
 socket.onmessage = function (event) {
   const data = JSON.parse(event.data)
   console.log(data)
+  quiz.start()
+
+  switch (data.command) {
+    case 'show_correct':
+      quiz.correctAnswer = data.params.choice
+      break
+  }
 }
 
 if (isAdmin()) {
@@ -26,7 +32,8 @@ if (isAdmin()) {
 
   ui_show_answer.addEventListener('click', e => {
     socket.send(JSON.stringify({
-      command: 'show_correct'
+      command: 'show_correct',
+      params: { choice: quiz.correctAnswer }
     }))
   })
 
@@ -45,6 +52,12 @@ if (isAdmin()) {
       params: {
         slideIndex: quiz.next
       }
+    }))
+  })
+
+  ui_start_quiz.addEventListener('click', e => {
+    socket.send(JSON.stringify({
+      command: 'start'
     }))
   })
 }
