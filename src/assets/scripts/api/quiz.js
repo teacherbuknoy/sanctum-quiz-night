@@ -49,6 +49,22 @@ class Quiz {
     }
   }
 
+  get previous() {
+    if (this.current > 0) {
+      return this.current - 1
+    } else {
+      return 0
+    }
+  }
+
+  get next() {
+    if (this.current < this.data.length) {
+      return this.current + 1
+    } else {
+      return this.data.length - 1
+    }
+  }
+
   showCurrentQuestion() {
     const item = this.data[this.current]
     console.log(item)
@@ -59,7 +75,7 @@ class Quiz {
       this.ui.choices[idx].innerText = option.text
       
       if (isAdmin() && option.isCorrect) {
-        this.ui.choices[idx].classList.add('correct')
+        this.ui.choices[idx].classList.add('correct-for-admin')
       }
     })
   }
