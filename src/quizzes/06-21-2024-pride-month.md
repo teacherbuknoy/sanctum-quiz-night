@@ -9,4 +9,11 @@ questions:
       - text: Visayas
       - text: Cebu
       - text: Negros Oriental
+  - question: "Kumpletuhin ang lyrics ng gay anthem na Born This Way ni Lady Gaga: \"No matter black, white, or beige, ____________ or orient made, I'm on the right track, baby, I was born to be brave.\""
+    choices:
+      - text: morena
+      - text: caucasian
+      - text: chola
+        isCorrect: true
+      - text: gypsy
 ---

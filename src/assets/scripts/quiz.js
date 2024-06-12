@@ -26,6 +26,10 @@ socket.onmessage = function (event) {
         setTimeout(() => btnChoice.classList.remove('wrong'), 2000)
       }
       break
+    case 'change_slide':
+      const { slideIndex } = data.params
+      quiz.showSlide(slideIndex)
+      break
   }
 }
 

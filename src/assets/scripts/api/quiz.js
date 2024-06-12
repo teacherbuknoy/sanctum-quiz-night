@@ -49,6 +49,16 @@ class Quiz {
     }
   }
 
+  showSlide(idx) {
+    console.log('[CHANGE SLIDE]', idx)
+    if (idx >= 0 && idx < this.data.length) {
+      this.current = idx
+      this.showCurrentQuestion()
+    } else {
+      console.error('Given slide index is greater than the total number of questions, or it is -1.')
+    }
+  }
+
   get previous() {
     if (this.current > 0) {
       return this.current - 1
