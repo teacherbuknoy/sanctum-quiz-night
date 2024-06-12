@@ -421,3 +421,42 @@ body:has(.slide-container) {
     background-image: url("/assets/images/wrong.png");
   }
 }
+
+.slide-container:not(.start) .slide--question,
+.slide-container.start .slide--cover {
+  display: none;
+}
+
+body.admin {
+  position: relative;
+}
+
+body.admin::before {
+  background-color: #fd0;
+  color           : #710;
+  content         : 'You are the admin for this game';
+  left            : 0;
+  padding         : 1ch;
+  padding-inline  : 5ch;
+  position        : fixed;
+  right           : 0;
+  text-align      : center;
+  top             : 0;
+  z-index         : 999;
+}
+
+body:not(.admin) .admin {
+  display: none;
+}
+
+.commands {
+  display        : flex;
+  flex-direction : row;
+  gap            : 1rem;
+  justify-content: end;
+  left           : 0;
+  position       : fixed;
+  right          : 0;
+  top            : 3rem;
+  z-index        : 999;
+}

@@ -47,6 +47,16 @@ async function checkAuth() {
   return isAuthenticated
 }
 
+function isAdmin() {
+  return localStorage.getItem('sanctum_auth_role') === 'admin'
+}
+
+if (isAdmin()) {
+  document.body.classList.add('admin')
+} else {
+  document.body.classList.remove('admin')
+}
+
 window.registerPlayer = registerPlayer
 window.getCurrentPlayer = getCurrentPlayer
 window.getAllPlayers = getAllPlayers
@@ -54,3 +64,4 @@ window.kickPlayer = kickPlayer
 window.addScore = addScore
 window.subtractScore = subtractScore
 window.checkAuth = checkAuth
+window.isAdmin = isAdmin

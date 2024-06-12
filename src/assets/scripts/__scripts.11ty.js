@@ -10,7 +10,8 @@ require('dotenv').config()
 class Script {
   constructor() {
     this.inputFiles = {
-      index: 'index.js'
+      index: 'index.js',
+      quiz: 'quiz.js',
     }
   }
 
