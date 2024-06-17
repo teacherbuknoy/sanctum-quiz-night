@@ -316,7 +316,6 @@ body:has(.slide-container) {
   width            : var(--width);
   min-height       : calc(100vh - 10rem);
   grid-auto-columns: var(--width);
-  overflow         : auto;
   scroll-snap-type : x mandatory;
 }
 
@@ -465,4 +464,27 @@ body:not(.admin) .admin {
   border-color: #4c0;
   outline     : 2px solid #4c0;
   color       : #7e0;
+}
+
+.answer {
+  background-color: #0e51ff;
+  border-radius   : 1em;
+  outline         : 10px solid #fffa;
+  padding         : 1em;
+  position        : relative;
+
+  &::before {
+    aspect-ratio       : 1/1;
+    background-image   : url("/assets/images/fyi.png");
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : contain;
+    content            : '';
+    height             : 10ch;
+    left               : 0;
+    position           : absolute;
+    top                : 0;
+    transform          : translate(-50%, -50%);
+    width              : auto;
+  }
 }

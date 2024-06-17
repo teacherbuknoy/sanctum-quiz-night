@@ -10,7 +10,10 @@ const socket = new WebSocket('wss://sanctumapi.francisrub.io/quiz')
 socket.onmessage = function (event) {
   const data = JSON.parse(event.data)
   console.log(data)
-  quiz.start()
+
+  if (data.command !== 'heartbeat') {
+    quiz.start()
+  }
 
   switch (data.command) {
     case 'show_correct':
@@ -21,6 +24,7 @@ socket.onmessage = function (event) {
       const btnChoice = quiz.element.querySelector(`[data-choice=${choice}]`)
       if (isCorrect) {
         btnChoice.classList.add('correct')
+        showAnswer()
       } else {
         btnChoice.classList.add('wrong')
         setTimeout(() => btnChoice.classList.remove('wrong'), 2000)
@@ -30,6 +34,15 @@ socket.onmessage = function (event) {
       const { slideIndex } = data.params
       quiz.showSlide(slideIndex)
       break
+  }
+}
+
+function showAnswer() {
+  const item = quiz.data[quiz.current]
+  console.log('[ANSWER]', item)
+
+  if (item.answerText) {
+    quiz.ui.question.innerHTML = `<div class="answer"><p>${item.answerText}</p></div>`
   }
 }
 
@@ -50,7 +63,7 @@ if (isAdmin()) {
   ui_show_answer.addEventListener('click', e => {
     socket.send(JSON.stringify({
       command: 'show_correct',
-      params: { choice: quiz.correctAnswer }
+      params: { choice: quiz.correctAnswer, isCorrect: true }
     }))
   })
 
