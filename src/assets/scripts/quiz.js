@@ -18,6 +18,7 @@ socket.onmessage = function (event) {
   switch (data.command) {
     case 'show_correct':
       quiz.correctAnswer = data.params.choice
+      showAnswer()
       break
     case 'show_answer':
       const { choice, isCorrect } = data.params
@@ -42,7 +43,7 @@ function showAnswer() {
   console.log('[ANSWER]', item)
 
   if (item.answerText) {
-    quiz.ui.question.innerHTML = `<div class="answer"><p>${item.answerText}</p></div>`
+    quiz.ui.answer.showPopover()
   }
 }
 

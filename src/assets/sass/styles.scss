@@ -469,9 +469,16 @@ body:not(.admin) .admin {
 .answer {
   background-color: #0e51ff;
   border-radius   : 1em;
-  outline         : 10px solid #fffa;
+  color           : #fff;
+  font-family     : var(--question-font);
+  font-size       : 1.5rem;
+  line-height     : 1.5;
+  outline         : 10px solid rgba(255, 255, 255, 0.6666666667);
+  overflow        : visible;
   padding         : 1em;
   position        : relative;
+  text-align      : center;
+  width           : 70%;
 
   &::before {
     aspect-ratio       : 1/1;

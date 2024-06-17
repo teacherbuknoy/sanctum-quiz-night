@@ -44,7 +44,7 @@ questions:
       - text: 1990
       - text: 2000
         isCorrect: true
-    answerText: "Ang pinakaunang anti gender-based discrimination bill ay inihain sa 11th Congress noong taòng 2000."
+    answerText: "Ang pinakaunang anti gender-based discrimination bill ay inihain sa 11th Congress noong taóng 2000."
   - question: "Sino ang nag-file ng pinakaunang anti gender-based discrimination bill sa Pilipinas?"
     choices:
       - text: Tessie Aquino-Oreta
@@ -52,7 +52,7 @@ questions:
         isCorrect: true
       - text: Raul Roco
       - text: Loren Legarda
-    answerText: "Ang pinakaunang anti gender-based discrimination bill ay ang Employment Non-Discrimination bill ay inihain ni Sen. Miriam Defensor-Santiago sa 11th Congress noong 2000. Nag-file siya ng isa pang revision nito sa 13th, 14th, at 15th Congress na lahat ay hindi naipasa. Ang mga bills na ito ang naging batayan ng kasalukuyang porma ng SOGIESC Anti Discrimination Bill."
+    answerText: "Ang pinakaunang anti gender-based discrimination bill ay ang Employment Non-Discrimination bill ay inihain ni Sen. Miriam Defensor-Santiago sa 11th Congress noong 2000. Nag-file siya ng isa pang revision nito sa 13th, 14th, at 15th Congress na lahat ay hindi naipasá. Ang mga bills na ito ang naging batayan ng kasalukuyang porma ng SOGIESC Anti Discrimination Bill."
   - question: "Anong wika ang pinakamahigpit na kalaban ng Tagalog bilang batayan ng wikang pambansa?"
     choices:
       - text: Cebuano

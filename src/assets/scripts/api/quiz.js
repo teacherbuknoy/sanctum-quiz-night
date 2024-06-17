@@ -17,6 +17,7 @@ class Quiz {
 
     this.ui = {
       question: this.element.querySelector('[data-quiz=question]'),
+      answer: this.element.querySelector('[data-quiz=answer]'),
       choices: [
         this.element.querySelector('[data-choice=a]'),
         this.element.querySelector('[data-choice=b]'),
@@ -79,6 +80,9 @@ class Quiz {
     const item = this.data[this.current]
     console.log(item)
     this.ui.question.innerHTML = `<p>Question #${this.current + 1}</p><p>${item.question}</p>`
+
+    this.ui.answer.hidePopover()
+    this.ui.answer.innerHTML = `<p>${item.answerText}</p>`
 
     console.log("ADMIN?", isAdmin())
     item.choices.forEach((option, idx) => {
