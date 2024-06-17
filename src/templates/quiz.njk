@@ -28,6 +28,7 @@
         </div>
       </article>
     </main>
+    {{ content | safe }}
     <template id="ui_slide"></template>
     <script>
       window.questions = {{ questions | dump | safe }};
