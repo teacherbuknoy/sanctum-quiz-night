@@ -16,4 +16,25 @@ questions:
       - text: chola
         isCorrect: true
       - text: gypsy
+  - question: "Anong klaseng nilalang si Hello Kitty?"
+    choices:
+      - text: pusa
+      - text: tao
+        isCorrect: true
+      - text: daga
+      - text: aso
+  - question: "Ano ang pangalan ng kakambal ni Hello Kitty?"
+    choices:
+      - text: Doggy
+      - text: Jennica
+      - text: Nina
+      - text: Mimi
+        isCorrect: true
+  - question: "Ano ang apelyido ni Hello Kitty?"
+    choices:
+      - text: Black
+      - text: Smith
+      - text: Cruz
+      - text: White
+        isCorrect: true
 ---
