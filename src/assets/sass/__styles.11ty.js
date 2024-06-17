@@ -5,7 +5,9 @@ const fs = require('fs')
 class Stylesheets {
   constructor() {
     this.inputFiles = {
-      styles: 'styles.scss'
+      styles: 'styles.scss',
+      print: 'print.scss',
+      nameplates: 'printing/nameplates.scss',
     }
   }
 

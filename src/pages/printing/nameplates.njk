@@ -1,0 +1,25 @@
+---
+title: Name Plates
+permalink: /anniversary/2024/nameplates/
+layout: printing.njk
+styles:
+  - /assets/styles/nameplates.css
+---
+
+<div class="nameplate-grid">
+  {% set data = nameplates | selectattr('year', 2024) %}
+  {% set members = data[0].list %}
+  {% for person in members %}
+    <article class="nameplate">
+      <header>
+        {% include "ui/logo.njk" %}
+        <span class="role">{{ person.role }}</span>
+      </header>
+      <p class="name">{{ person.username }}</p>
+    </article>
+  {% endfor %}
+</div>
+
+<script>
+  console.log(JSON.parse(`{{ members | dump | safe }}`))
+</script>
