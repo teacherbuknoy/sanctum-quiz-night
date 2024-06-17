@@ -23,5 +23,8 @@ module.exports = {
   },
   markdown: function (value) {
     return md.render(value)
-  }
+  },
+  selectAttribute: (array, key, value = true) => array.filter(item => item[key] === value),
+  rejectAttribute: (array, key, value = true) => array.filter(item => item[key] !== value),
+  rejectNullAttribute: (array, key) => array.filter(item => item[key] != null || item[key].length <= 0)
 }

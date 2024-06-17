@@ -1,0 +1,70 @@
+@page {
+  size: A4 landscape;
+}
+
+body {
+  font-family: 'BBC Reith Sans', sans-serif;
+}
+
+.nameplate-grid {
+  --gap                : 1ch;
+  display              : grid;
+  row-gap                  : var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(calc(50% - var(--gap)), 1fr));
+}
+
+.nameplate {
+  border        : 1px dashed #000C;
+  container-type: inline-size;
+  display       : flex;
+  flex-direction: column;
+  font-family   : "BBC Reith Sans XBold", sans-serif;
+  padding       : 1ch;
+  text-transform: uppercase;
+
+  &:nth-child(2n+1):not(:last-child) {
+    border-inline-end: none;
+  }
+
+  header {
+    display              : grid;
+    align-items          : center;
+    grid-template-columns: auto min-content 1fr;
+    gap                  : 1ch;
+
+    &>* {
+      grid-row: 1;
+    }
+
+    &::after {
+      content    : "/";
+      grid-column: 2/3;
+      font-family: "BBC Reith Sans", sans-serif;
+      font-size  : 75%;
+    }
+
+    .role,
+    &::after {
+      bottom     : -0.05lh;
+      line-height: 1;
+      position   : relative;
+    }
+
+    .role {
+      grid-column: 3/4;
+    }
+
+    .logo {
+      height: 2ch;
+      width : auto;
+    }
+  }
+
+  .name {
+    bottom     : -0.15lh;
+    font-size  : clamp(1rem, 10cqh, 5rem);
+    line-height: 100%;
+    margin     : 0;
+    position   : relative;
+  }
+}

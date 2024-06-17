@@ -20,6 +20,12 @@ styles:
   {% endfor %}
 </div>
 
+<pre class="no-print">
+  Total number of attendees: {{ members.length }}
+  Total number of admins attending: {{ members | selectAttribute('role', 'Admin') | length }}
+  Total number of students: {{ members | selectAttribute('isStudent', 'Yes') | length }}
+</pre>
+
 <script>
   console.log(JSON.parse(`{{ members | dump | safe }}`))
 </script>

@@ -1,0 +1,11 @@
+@page {
+  size         : A4;
+  margin-inline: 0.25in;
+  margin-block : 0.5in;
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+}
