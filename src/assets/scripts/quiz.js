@@ -49,6 +49,7 @@ function showAnswer() {
 
 if (isAdmin()) {
   document.querySelectorAll('button[data-choice]').forEach(button => {
+    button.removeAttribute('popovertarget')
     button.addEventListener('click', e => {
       const choice = button.dataset.choice
       socket.send(JSON.stringify({
@@ -90,5 +91,14 @@ if (isAdmin()) {
     socket.send(JSON.stringify({
       command: 'start'
     }))
+  })
+} else {
+  document.querySelectorAll('button[data-choice]').forEach(button => {
+    const warning = document.getElementById('dont-answer-here')
+    let popoverTimeout = null
+    button.addEventListener('click', e => {
+      clearTimeout(popoverTimeout)
+      popoverTimeout = setTimeout(() => warning.hidePopover(), 3000)
+    })
   })
 }

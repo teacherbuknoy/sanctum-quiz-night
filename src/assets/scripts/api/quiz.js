@@ -29,6 +29,7 @@ class Quiz {
 
   start() {
     this.element.classList.add('start')
+    document.body.classList.remove('cover')
     this.showCurrentQuestion()
   }
 
@@ -82,7 +83,7 @@ class Quiz {
     this.ui.question.innerHTML = `<p>Question #${this.current + 1}</p><p>${item.question}</p>`
 
     this.ui.answer.hidePopover()
-    this.ui.answer.innerHTML = `<p>${item.answerText}</p>`
+    this.ui.answer.innerHTML = `<p>${item.answerText}</p><div class="choices for-display"><button class="correct">${item.choices.find(c => c.isCorrect).text}</button></div>`
 
     console.log("ADMIN?", isAdmin())
     item.choices.forEach((option, idx) => {

@@ -6,7 +6,7 @@
     <title>{{ title | safe }}</title>
     {% include "meta/stylesheets.njk" %}
   </head>
-  <body>
+  <body class="cover">
     <header class="admin commands">
       <button id="ui_show_answer">Show correct answer</button>
       <button id="ui_prev_question">&lt; Previous Question</button>
@@ -22,10 +22,11 @@
         <div class="question" data-quiz="question"></div>
         <div popover class="answer" data-quiz="answer"></div>
         <div class="choices" data-quiz="choices">
-          <button data-choice="a"></button>
-          <button data-choice="b"></button>
-          <button data-choice="c"></button>
-          <button data-choice="d"></button>
+          <div popover id="dont-answer-here">Hindi rito sasagot. Pumunta sa Multibuzzer at makipag-unahang pumindot para makasagot.</div>
+          <button data-choice="a" popovertarget="dont-answer-here"></button>
+          <button data-choice="b" popovertarget="dont-answer-here"></button>
+          <button data-choice="c" popovertarget="dont-answer-here"></button>
+          <button data-choice="d" popovertarget="dont-answer-here"></button>
         </div>
       </article>
     </main>
