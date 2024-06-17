@@ -22,10 +22,12 @@ styles:
 
 <pre class="no-print">
   Total number of attendees: {{ members.length }}
+  Total attendees paid: {{ members | rejectEmptyAttribute('payment') | length }}
   Total number of admins attending: {{ members | selectAttribute('role', 'Admin') | length }}
   Total number of students: {{ members | selectAttribute('isStudent', 'Yes') | length }}
 </pre>
 
 <script>
-  console.log(JSON.parse(`{{ members | dump | safe }}`))
+  var members = JSON.parse(`{{ members | dump | safe }}`)
+  console.log(members)
 </script>

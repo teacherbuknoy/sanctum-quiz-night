@@ -26,5 +26,5 @@ module.exports = {
   },
   selectAttribute: (array, key, value = true) => array.filter(item => item[key] === value),
   rejectAttribute: (array, key, value = true) => array.filter(item => item[key] !== value),
-  rejectNullAttribute: (array, key) => array.filter(item => item[key] != null || item[key].length <= 0)
+  rejectEmptyAttribute: (array, key) => array.filter(item => item[key] != null && item[key].length <= 0)
 }
