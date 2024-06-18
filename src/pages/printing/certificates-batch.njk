@@ -1,0 +1,11 @@
+---
+title: Certificates - For Printing
+layout: printing.njk
+styles:
+  - /assets/styles/certificates.css
+permalink: /anniversary/2024/certificates/for-printing/
+---
+
+{% for award in awards[0].awards %}
+  {% include "ui/certificate.njk" %}
+{% endfor %}
