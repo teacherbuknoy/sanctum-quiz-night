@@ -1,5 +1,7 @@
+const yaml = require('yaml')
+
 const collections = require('./src/config/collections.js')
-const filters = require('./src/config/filters.js') 
+const filters = require('./src/config/filters.js')
 const watchtargets = require('./src/config/watchtargets.js')
 const passthroughs = require('./src/config/passthroughs.js')
 
@@ -19,6 +21,8 @@ module.exports = function (config) {
   Object.keys(passthroughs).forEach(name => {
     config.addPassthroughCopy(passthroughs[name]())
   })
+
+  config.addDataExtension('yaml', (contents) => yaml.parse(contents))
 
   return {
     dir: {

@@ -1,0 +1,32 @@
+@page {
+  size: letter landscape;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.certificate {
+  --bottom-left      : url("/assets/images/bottom-left.svg");
+  --bottom-right     : url("/assets/images/bottom-right.svg");
+  --top-left         : url("/assets/images/top-left.svg");
+  --top-right        : url("/assets/images/top-right.svg");
+  background-image   : var(--top-right), var(--top-left), var(--bottom-right), var(--bottom-left);
+  background-position: top right, top left, bottom right, bottom left;
+  background-repeat  : no-repeat;
+  background-size    : 10vh, 10vh, 10vh, 10vh, 10vh;
+  display            : grid;
+  height             : 100vh;
+  outline            : 1vh solid black;
+  outline-offset     : -2vh;
+  padding            : 1rem;
+  place-content      : center;
+  text-align         : center;
+  width              : 100vw;
+}

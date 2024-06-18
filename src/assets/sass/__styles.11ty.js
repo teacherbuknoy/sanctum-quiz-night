@@ -8,6 +8,7 @@ class Stylesheets {
       styles: 'styles.scss',
       print: 'print.scss',
       nameplates: 'printing/nameplates.scss',
+      certificates: 'printing/certificates.scss',
     }
   }
 

@@ -1,0 +1,118 @@
+- date: 2024-07-14
+  admins:
+    - name: Popskie
+      role: Server Owner
+    - name: Francis
+      role: Admin
+    - name: Isa
+      role: Admin
+    - name: Jordy
+      role: Admin
+    - name: Tyr
+      role: Admin
+  awards:
+    - category: 
+        title: Joy Belmonte Seal of Good Local Governance
+        description: bilang pagkilala sa kanyang husay bilang admin ng server na The Sanctum.
+      winner: Popskie
+    - category: 
+        title: Palanca Award para sa Spoken Poetry
+        description: bilang pagkilala sa palagian niyang presensya sa mga voice channel ng The Sanctum.
+      winner: Popskie
+    - category: 
+        title: Palanca Award para sa Maikling Kuwento
+        description: bilang pagkilala sa palagian niyang presensya sa mga text channel ng The Sanctum.
+      winner: Popskie
+    - category: 
+        title: Humayo't Ihayag Lifetime Achievement Award
+        description: bilang pagkilala sa palagian niyang pag-aaya ng gala at lakwatsa sa The Sanctum.
+      winner: Popskie
+    - category: 
+        prefix: Tawag ng Tanghalan Award for
+        title: Best Vocal Performance
+        description: bilang pagkilala sa kaniyang husay sa pag-awit, ayon sa mga kasapi ng The Sanctum.
+      winner: Popskie
+    - category: 
+        title: Parangal ng Magkabiyak na Pisngi ng Mangga
+        description: bilang pagkilala sa pagpapakilig ng kanilang love team sa mga kasapi ng The Sanctum.
+      winner: Lara at KITT
+    - category: 
+        title: Momshie Melai Award for Best Talk Show Host
+        description: bilang pagkilala sa kaniyang pagiging entertaining sa The Sanctum.
+      winner: Lara at KITT
+    - category: 
+        prefix: "“Gisingin ang Natutulog na Sigla ng Kagubatan”:"
+        title: Lakan ng Limang Bayan
+        description: para sa pagiging server crush ng The Sanctum.
+      winner: Popskie
+    - category: 
+        prefix: "“Gisingin ang Natutulog na Sigla ng Kagubatan”:"
+        title: Mutya ng Ikatlong Lahi
+        description: para sa pagiging server crush ng The Sanctum.
+      winner: Popskie
+    - category: 
+        title: Cinemalaria Best Picture
+        description: para sa pinakamagandang entry sa selfies channel ng The Sanctum.
+      winner: Popskie
+    - category: 
+        title: Cubao-Anonas Pinterest Award for Fashion Design
+        description: para sa pinakamagagandang gayak sa mga meetup ng The Sanctum.
+      winner: Popskie
+    - category: 
+        prefix: Toy Story Award sa Pelikulang
+        title: “You've Got a Friend in Me”
+        description: para sa pagiging pinakapalakaibigan sa The Sanctum.
+      winner: Popskie
+    - category: 
+        title: Parangal Para sa Manggagawang Pilipino
+        description: para sa pagiging masipag na empleyado/estudyante sa The Sanctum.
+      winner: Popskie
+    - category: 
+        prefix: Chavit Singson Award sa Pelikulang
+        title: “I Can Buy You and All Your Friends”
+        description: para sa pagiging pinakamayamang miyembro ng The Sanctum.
+      winner: Popskie
+    - category: 
+        title: Lady's Choice Award for Best Drama Series
+        description: bilang pinakatumatak na isyu/away sa The Sanctum.
+      winner: Popskie
+    - category: 
+        title: Jaclyn Jose Nonchalance Award
+        description: bilang pagkilala sa kanyang pagiging nonchalant sa The Sanctum.
+      winner: Popskie
+    - category: 
+        title: OA
+        description: dahil siya ay OA sa The Sanctum.
+      winner: Popskie
+    - category: 
+        title: Jessica Soho Award for Outstanding Journalism
+        description: bilang pinakapaboritong entry sa newsletter channel ng The Sanctum.
+      winner: Popskie
+    - category:
+        prefix: Best Silent Film sa Pelikulang
+        title: "“Mute Ka Muna”: The Greenfield Ortigas Story"
+        description: dahil lagi siyang naka-mute sa mga voice channel ng The Sanctum.
+      winner: Popskie
+    - category:
+        prefix: Pagkilalang Douglas McArthur sa Programang
+        title: "“I Shall Return”: Pagbabalik ng Probinsyano"
+        description: para sa panay-panay na pagsasabi ng BRB sa The Sanctum pero hindi na bumabalik.
+      winner: Popskie
+    - category:
+        prefix: Gawad Kalinga Award sa Programang
+        title: “Kapwa Ko, Mahal Ko”
+        description: para sa pagiging galante at bukas-palad na miyembro ng The Sanctum.
+      winner: Popskie
+    - category:
+        prefix: Pagkilalang German Moreno sa Programang
+        title: “Walang Tulugan with the Master Showman”
+        description: dahil lagi siyang nagpupuyat sa mga voice channel ng The Sanctum.
+      winner: Popskie
+    - category:
+        title: Lydia De Vega Lifetime Achievement Award
+        description: bilang pagkilala sa kanyang impluwensya at fitness goals sa The Sanctum.
+      winner: Popskie
+    - category:
+        title: Hachiko Seal of Loyalty
+        description: bilang pagkilala sa kanyang loyalty sa The Sanctum.
+      winner: Popskie

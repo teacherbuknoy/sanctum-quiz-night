@@ -1,0 +1,17 @@
+---
+title: Name Plates
+layout: printing.njk
+styles:
+  - /assets/styles/certificates.css
+pagination:
+  data: awards[0].awards
+  size: 25
+  alias: awards
+permalink: '/anniversary/2024/certificates/{{ pagination.pageNumber + 1 }}/'
+---
+
+<ul>
+  {% for award in awards %}
+    <li><a href="/anniversary/2024/certificate/{{ award.category.title | slugify }}/">{{ award.category.prefix }}{{ ' ' if award.category.prefix }}{{ award.category.title }}</a></li>
+  {% endfor %}
+</ul>
