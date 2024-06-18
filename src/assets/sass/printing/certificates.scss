@@ -22,11 +22,80 @@ body {
   background-repeat  : no-repeat;
   background-size    : 10vh, 10vh, 10vh, 10vh, 10vh;
   display            : grid;
+  font-family        : 'BBC Reith Serif', serif;
+  font-size          : 12pt;
   height             : 100vh;
-  outline            : 1vh solid black;
+  outline            : 1vh solid #000;
   outline-offset     : -2vh;
   padding            : 1rem;
   place-content      : center;
   text-align         : center;
   width              : 100vw;
+}
+
+.certificate {
+  display       : flex;
+  flex-direction: column;
+  place-content : center;
+}
+
+.logo {
+  height      : 20pt;
+  margin-block: 0.5lh;
+}
+
+hgroup {
+  font-family: 'Script MT Bold';
+}
+
+.prefix,
+hgroup h1 {
+  margin     : 0;
+  line-height: 1;
+}
+
+.prefix {
+  font-size: 20pt;
+}
+
+hgroup h1 {
+  font-size         : 32pt;
+  margin-block-start: 0.6lh;
+}
+
+.winner {
+  font-family: 'BBC Reith Sans CD';
+  font-size  : 64pt;
+}
+
+dl {
+  display        : flex;
+  justify-content: space-between;
+}
+
+header {
+  margin-block-start: auto;
+}
+
+footer {
+  margin-block-start : auto;
+  margin-inline      : auto;
+  padding            : 24pt;
+  padding-block-start: 0;
+  width              : 90%;
+}
+
+.admin {
+  text-align: center;
+
+  dt {
+    font-family: 'BBC Reith Sans', sans-serif;
+    font-size  : 20pt;
+  }
+
+  dd {
+    margin     : 0;
+    font-family: 'BBC Reith Sans CD', sans-serif;
+    font-size  : 14pt;
+  }
 }
