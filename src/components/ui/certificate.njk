@@ -1,0 +1,31 @@
+<article class="certificate">
+  <header>
+    <p>
+      <span>Iginagawad ng</span><br>
+      {% include "ui/logo.njk" %}<br>
+      <span>ang pagkilalang</span><br>
+    </p>
+    <hgroup>
+      {% if award.category.prefix %}
+        <p class="prefix">{{ award.category.prefix }}</p>
+      {% endif %}
+      <h1>{{ award.category.title }}</h1>
+    </hgroup>
+  </header>
+  <p>
+    <span>kay</span><br>
+    <span class="winner">{{ award.winner }}</span><br>
+    <span>{{ award.category.description }}</span><br>
+    <span>Iginawad ngayong ika-14 ng Hulyo, 2024 sa Metro Manila, Philippines</span><br>
+  </p>
+  <footer>
+    <dl>
+      {% for admin in awards[0].admins %}
+        <div class="admin" data-signature="{{ admin.name }}">
+          <dt>{{ admin.name }}</dt>
+          <dd>{{ admin.role }}</dd>
+        </div>
+      {% endfor %}
+    </dl>
+  </footer>
+</article>
