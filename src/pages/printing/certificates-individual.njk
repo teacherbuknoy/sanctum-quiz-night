@@ -1,5 +1,4 @@
 ---
-title: Name Plates
 layout: printing.njk
 styles:
   - /assets/styles/certificates.css
@@ -8,5 +7,7 @@ pagination:
   size: 1
   alias: award
 permalink: '/anniversary/2024/certificate/{{ award.category.title | slugify }}/'
+eleventyComputed:
+  title: "{{ award.category.title }} - Sanctum Awards 2024"
 ---
 {% include "ui/certificate.njk" %}
