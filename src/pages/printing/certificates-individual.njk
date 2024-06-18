@@ -32,7 +32,7 @@ permalink: '/anniversary/2024/certificate/{{ award.category.title | slugify }}/'
   <footer>
     <dl>
       {% for admin in awards[0].admins %}
-        <div class="admin">
+        <div class="admin" data-signature="{{ admin.name }}">
           <dt>{{ admin.name }}</dt>
           <dd>{{ admin.role }}</dd>
         </div>

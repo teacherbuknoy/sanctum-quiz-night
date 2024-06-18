@@ -2,6 +2,11 @@
   size: letter landscape;
 }
 
+@font-face {
+  font-family: 'Virghie';
+  src        : url(/assets/fonts/virghie.ttf) format('truetype');
+}
+
 *,
 *::before,
 *::after {
@@ -87,6 +92,15 @@ footer {
 
 .admin {
   text-align: center;
+
+  &::before {
+    color      : #b40001;
+    content    : attr(data-signature);
+    font-family: "Virghie", cursive;
+    font-size  : 26pt;
+    font-weight: bold;
+    line-height: 35%;
+  }
 
   dt {
     font-family: 'BBC Reith Sans', sans-serif;
