@@ -52,7 +52,18 @@
       </main>
     </div>
     <script>
-      window.questions = {{ questions | dump | safe }};
+      {# window.questions = {{ questions | dump | safe }};#}
+      window.questions = [
+        {% for item in questions %}
+          {
+            question: `{{ item.question | markdown | safe }}`,
+            choices: {{ item.choices | dump | safe }},
+            {% if item.answerText != null %}
+              answerText: `{{ item.answerText | markdown | safe }}`,
+            {% endif %}
+          },
+        {% endfor %}
+      ]
       console.log(window.questions)
     </script>
     <script src="/assets/scripts/quiz.js"></script>

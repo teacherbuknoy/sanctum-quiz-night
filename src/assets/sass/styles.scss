@@ -431,19 +431,23 @@ body:has(.slide-container) {
   }
 }
 
-.choices button:is(.correct, .wrong)::after {
-  aspect-ratio       : 1/1;
-  background-position: center;
-  background-repeat  : no-repeat;
-  background-size    : contain;
-  content            : "";
-  height             : auto;
-  position           : absolute;
-  right              : 0;
-  top                : 0;
-  transform          : translateX(25%) translateY(-25%);
-  width              : 5ch;
-  z-index            : 999;
+.choices button:is(.correct, .wrong) {
+  z-index: 999;
+
+  &::after {
+    aspect-ratio       : 1/1;
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : contain;
+    content            : "";
+    height             : auto;
+    position           : absolute;
+    right              : 0;
+    top                : 0;
+    transform          : translateX(25%) translateY(-25%);
+    width              : 5ch;
+    z-index            : 999;
+  }
 }
 
 .choices button.correct {
