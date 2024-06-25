@@ -517,7 +517,7 @@ body:not(.admin) .admin {
   border-radius   : 1em;
   color           : #fff;
   font-family     : var(--question-font);
-  font-size       : 1.5rem;
+  font-size       : clamp(0.8rem, 5vw, 1.5rem);
   line-height     : 1.5;
   max-height      : 90vh;
   outline         : 10px solid rgba(255, 255, 255, 0.6666666667);
@@ -530,6 +530,11 @@ body:not(.admin) .admin {
 
   &:popover-open {
     display: grid;
+  }
+
+  &::backdrop {
+    background-color: #0007;
+    backdrop-filter : blur(0.2ch);
   }
 
   @media (width < 100ch) {
@@ -663,4 +668,10 @@ body:not(.admin) .admin {
 #dont-answer-here {
   bottom: 1rem;
   top   : auto;
+}
+
+.panes .choices.for-display {
+  place-content        : center;
+  grid-template-columns: 1fr;
+  grid-template-rows   : 1fr;
 }
