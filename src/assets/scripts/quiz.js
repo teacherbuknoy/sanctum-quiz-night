@@ -62,6 +62,15 @@ if (isAdmin()) {
     })
   })
 
+  ui_refresh.addEventListener('click', e => {
+    socket.send(JSON.stringify({
+      command: 'change_slide',
+      params: {
+        slideIndex: quiz.current
+      }
+    }))
+  })
+
   ui_show_answer.addEventListener('click', e => {
     socket.send(JSON.stringify({
       command: 'show_correct',
