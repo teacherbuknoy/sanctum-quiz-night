@@ -417,11 +417,13 @@ body:has(.slide-container) {
   button {
     font-size    : 2rem;
     font-family  : var(--question-font);
-    color        : white;
+    color        : #fff;
     background   : none;
     box-shadow   : none;
     border       : 2px solid;
     border-radius: 0;
+    display      : flex;
+    place-content: center;
 
     @media (width < 100ch) {
       font-size: 1.25rem;
