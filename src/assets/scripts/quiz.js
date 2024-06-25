@@ -34,6 +34,7 @@ socket.onmessage = function (event) {
     case 'change_slide':
       const { slideIndex } = data.params
       quiz.showSlide(slideIndex)
+      ui_slide_number.value = slideIndex + 1
       break
   }
 }
@@ -60,6 +61,15 @@ if (isAdmin()) {
         }
       }))
     })
+  })
+
+  ui_slide_number.addEventListener('change', e => {
+    socket.send(JSON.stringify({
+      command: 'change_slide',
+      params: {
+        slideIndex: Number.isNaN(ui_slide_number.valueAsNumber) ? quiz.current : ui_slide_number.valueAsNumber - 1
+      }
+    }))
   })
 
   ui_refresh.addEventListener('click', e => {

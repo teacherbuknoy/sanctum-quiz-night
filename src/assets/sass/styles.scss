@@ -168,11 +168,11 @@ button {
 
   @media (width < 100ch) {
     padding: 2ch 2ch;
-
-    .button__label {
-      display: none;
-    }
   }
+}
+
+.button__label {
+  display: none;
 }
 
 table {
@@ -441,8 +441,9 @@ body:has(.slide-container) {
   position           : absolute;
   right              : 0;
   top                : 0;
-  transform          : translateX(50%) translateY(-50%);
+  transform          : translateX(25%) translateY(-25%);
   width              : 5ch;
+  z-index            : 999;
 }
 
 .choices button.correct {
@@ -674,4 +675,17 @@ body:not(.admin) .admin {
   place-content        : center;
   grid-template-columns: 1fr;
   grid-template-rows   : 1fr;
+}
+
+.answer p {
+  margin    : 0;
+  max-height: 90%;
+}
+
+.answer img {
+  max-height: 20ch;
+}
+
+.question img {
+  max-height: 5ch;
 }
