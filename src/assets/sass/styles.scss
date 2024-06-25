@@ -53,7 +53,7 @@ h1 {
   align-items: center;
   display    : flex;
   font-family: "Bowlby One SC", sans-serif;
-  font-size  : clamp(2rem, 10vw, 4rem);
+  font-size  : clamp(1rem, 7vw, 4rem);
   font-style : normal;
   font-weight: 400;
   gap        : 3rem;
@@ -77,7 +77,7 @@ h1::after {
   content          : '';
   display          : block;
   height           : auto;
-  width            : 6rem;
+  width            : clamp(2rem, 15vw, 6rem);
 }
 
 main {
@@ -359,7 +359,7 @@ body:has(.slide-container) {
 .title {
   text-align      : center;
   place-self      : start;
-  font-size       : clamp(1rem, 7vw, 4rem);
+  font-size       : clamp(1rem, 5vw, 4rem);
   font-family     : var(--title-font);
   filter          : var(--title-filter);
   color           : rgba(0, 0, 0, 0);
@@ -656,4 +656,9 @@ body:not(.admin) .admin {
 .panes .question {
   padding-inline: 5vw;
   width         : auto;
+}
+
+#dont-answer-here {
+  bottom: 1rem;
+  top   : auto;
 }
