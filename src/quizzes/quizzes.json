@@ -1,4 +1,4 @@
 {
   "permalink": "/quiz/{{ quizCode }}/",
-  "layout": "quiz.njk"
+  "layout": "quiz-frames.njk"
 }
