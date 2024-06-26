@@ -130,7 +130,7 @@ form {
   align-items          : center;
   display              : grid;
   gap                  : 1rem;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(3, 1fr);
   margin               : auto;
   padding-block-start  : 5ch;
   width                : fit-content;
@@ -692,4 +692,13 @@ body:not(.admin) .admin {
 
 .question img {
   max-height: 5ch;
+}
+
+.player-commands {
+  display: flex;
+  gap: 1ch;
+
+  button {
+    flex: 1;
+  }
 }

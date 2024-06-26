@@ -194,9 +194,11 @@ permalink: /play/
     if (userIsAdmin()) {
       return `
       <td>
-        <button data-player="${player.id}" data-action="add-score">+</button>
-        <button data-player="${player.id}" data-action="subtract-score">-</button>
-        <button data-player="${player.id}" data-action="kick">Kick</button>
+        <div class="player-commands">
+          <button data-player="${player.id}" data-action="add-score">+</button>
+          <button data-player="${player.id}" data-action="subtract-score">-</button>
+          <button data-player="${player.id}" data-action="kick">Kick</button>
+        </div>
       </td>`
     }
 
