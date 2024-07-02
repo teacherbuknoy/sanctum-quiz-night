@@ -12,11 +12,11 @@ permalink: '/anniversary/2024/certificates/{{ pagination.pageNumber + 1 }}/'
 
 <div style="margin-inline: 1rem;">
   <h1>Sanctum Awards 2024</h1>
-  <ul>
-    {% for award in awards %}
+  <ol>
+    {% for award in awards | sortByProp('index') %}
       <li>
         <a href="/anniversary/2024/certificate/{{ award.category.title | slugify }}/">{{ award.category.prefix }}{{ ' ' if award.category.prefix }}{{ award.category.title }}{{ ' ' if award.category.suffix }}{{ award.category.suffix }}</a>
       </li>
     {% endfor %}
-  </ul>
+  </ol>
 </div>

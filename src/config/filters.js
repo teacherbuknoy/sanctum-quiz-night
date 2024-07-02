@@ -29,5 +29,6 @@ module.exports = {
   rejectEmptyAttribute: (array, key) => array.filter(item => item[key] != null && item[key].length <= 0),
   icon: function (value) {
     return `<svg class="feather" aria-hidden="true"><use href="/assets/images/feather-sprite.svg#${value}" /></svg>`
-  }
+  },
+  sortByProp: (array, key) => array.sort((a, b) => a[key] - b[key])
 }

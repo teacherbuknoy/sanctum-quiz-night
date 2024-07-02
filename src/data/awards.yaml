@@ -11,120 +11,144 @@
     - name: Tyr
       role: Admin
   awards:
-    - category:
+    - index: 21
+      category:
         prefix: Joy Belmonte Seal of
         title: Good Local Governance
         description: bilang pagkilala sa kanyang husay bilang admin ng server na The Sanctum.
       winner: Francis
-    - category:
+    - index: 1
+      category:
         prefix: Palanca Award para sa    
         title: Spoken Poetry
         description: bilang pagkilala sa palagian niyang presensya sa mga voice channel ng The Sanctum.
       winner: Suni
-    - category: 
+    - index: 2
+      category: 
         prefix: Palanca Award para sa    
         title: Maikling Kuwento
         description: bilang pagkilala sa palagian niyang presensya sa mga text channel ng The Sanctum.
       winner: Ddabooong
-    - category: 
+    - index: 3
+      category: 
         title: Humayo't Ihayag
         suffix: Lifetime Achievement Award
         description: bilang pagkilala sa palagian niyang pag-aaya ng gala at lakwatsa sa The Sanctum.
       winner: Cess
-    - category: 
+    - index: 20
+      category: 
         prefix: Tawag ng Tanghalan Award for
         title: Best Vocal Performance
         description: bilang pagkilala sa kaniyang husay sa pag-awit, ayon sa mga kasapi ng The Sanctum.
       winner: Suni
-    - category: 
+    - index: 19
+      category: 
         entityType: concept
         prefix: Utada Hikaru Award sa Pelikulang
         title: First Love
         description: bilang pagkilala sa pagpapakilig ng kanilang love team sa The Sanctum.
       winner: "Popskie at Cess (#PopCess)"
-    - category:
+    - index: 17
+      category:
         prefix: Momshie Melai Award for     
         title: Best Talk Show Host
         description: bilang pagkilala sa kaniyang pagiging entertaining sa The Sanctum.
       winner: Francis
-    - category: 
+    - index: 22
+      category: 
         prefix: "“Gisingin ang Natutulog na Sigla ng Kagubatan”:"
         title: Lakan ng Limang Bayan
         description: para sa pagiging server crush ng The Sanctum.
       winner: Tyr
-    - category: 
+    - index: 23
+      category: 
         prefix: "“Gisingin ang Natutulog na Sigla ng Kagubatan”:"
         title: Mutya ng Ikatlong Lahi
         description: para sa pagiging server crush ng The Sanctum.
       winner: Hannah
-    - category: 
+    - index: 4
+      category: 
         prefix: Cinemalaya
         title: Best Picture
         description: para sa pinakamagandang entry sa selfies channel ng The Sanctum.
       winner: Isa
-    - category:
+    - index: 15
+      category:
         prefix: Cubao-Anonas Pinterest Award for    
         title: Fashion Design
         description: para sa pinakamagagandang gayak sa mga meetup ng The Sanctum.
       winner: Francis
-    - category: 
+    - index: 16
+      category: 
         prefix: Toy Story Award sa Pelikulang
         title: “You've Got a Friend in Me”
         description: para sa pagiging pinakapalakaibigan sa The Sanctum.
       winner: Suni
-    - category: 
+    - index: 5
+      category: 
         title: Parangal Para sa Manggagawang Pilipino
         description: para sa pagiging masipag na empleyado/estudyante sa The Sanctum.
       winner: Cess
-    - category: 
+    - index: 7
+      category: 
         prefix: Chavit Singson Award sa Pelikulang
         title: “I Can Buy You and All Your Friends”
         description: para sa pagiging pinakamayamang miyembro ng The Sanctum.
       winner: Addie
-    - category: 
+    - index: 24
+      category: 
         prefix: Lady's Choice Award for
         title: Best Drama Series
         description: bilang pinakatumatak na isyu/away sa The Sanctum.
       winner: Nicole vs. M••cha
-    - category: 
+    - index: 8
+      category: 
         title: Jaclyn Jose Award for Nonchalance
         description: bilang pagkilala sa kanyang pagiging nonchalant sa The Sanctum.
       winner: Pacchi
-    - category: 
+    - index: 9
+      category: 
         title: OA
         description: dahil siya ay OA sa The Sanctum.
       winner: Namohyo
-    - category: 
+    - index: 18
+      category: 
         prefix: Jessica Soho Award for
         title: Outstanding Journalism
         description: bilang pinakapaboritong entry sa newsletter channel ng The Sanctum.
       winner: Popskie, Nagiging Posessive Na; Cess, Walang Pake?
-    - category:
+    - index: 10
+      category:
         prefix: Best Silent Film sa Pelikulang
         title: "“Mute Ka Muna”: The Greenfield Ortigas Story"
         description: dahil lagi siyang naka-mute sa mga voice channel ng The Sanctum.
       winner: Nami
-    - category:
+    - index: 6
+      category:
         prefix: Pagkilalang Douglas McArthur sa Programang
         title: "“I Shall Return”: Pagbabalik ng Probinsyano"
         description: para sa panay-panay na pagsasabi ng BRB sa The Sanctum pero hindi na bumabalik.
       winner: Aineel
-    - category:
+    - index: 12
+      category:
         prefix: Gawad Kalinga Award sa Programang
         title: “Kapwa Ko, Mahal Ko”
         description: para sa pagiging galante at bukas-palad na miyembro ng The Sanctum.
       winner: Aineel
-    - category:
+    - index: 13
+      category:
         prefix: Pagkilalang German Moreno sa Programang
         title: “Walang Tulugan with the Master Showman”
         description: dahil lagi siyang nagpupuyat sa mga voice channel ng The Sanctum.
       winner: Suni
-    - category:
+    - index: 14
+      category:
         title: Lydia De Vega
         suffix: Lifetime Achievement Award
         description: bilang pagkilala sa kanyang impluwensya at fitness goals sa The Sanctum.
       winner: Aineel
-    - category:
+    - index: 11
+      category:
         title: Hachiko Seal of Loyalty
         description: bilang pagkilala sa kanyang loyalty sa The Sanctum.
       winner: "Yra"
