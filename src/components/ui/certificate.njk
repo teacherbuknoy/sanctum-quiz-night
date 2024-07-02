@@ -7,14 +7,19 @@
     </p>
     <hgroup>
       {% if award.category.prefix %}
-        <p class="prefix">{{ award.category.prefix }}</p>
+        <p class="affix">{{ award.category.prefix }}</p>
       {% endif %}
-      <h1>{{ award.category.title }}</h1>
+      <h1 class="{{ 'enlarge' if award.category.title.length < 20 }}{{ 'reduce' if award.category.title.length > 30 }}">{{ award.category.title }}</h1>
+      {% if award.category.suffix %}
+        <p class="affix suffix">{{ award.category.suffix }}</p>
+      {% endif %}
     </hgroup>
   </header>
   <p>
-    <span>kay</span><br>
-    <span class="winner">{{ award.winner }}</span><br>
+    <span>
+      {{ "sa" if award.category.entityType === 'concept' else "kay" }}
+    </span><br>
+    <span class="winner{{ ' reduce' if award.winner.length > 15 }}">{{ award.winner }}</span><br>
     <span>{{ award.category.description }}</span><br>
     <span>Iginawad ngayong ika-14 ng Hulyo, 2024 sa Metro Manila, Philippines</span><br>
   </p>

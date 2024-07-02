@@ -55,27 +55,48 @@ body {
 }
 
 hgroup {
-  font-family: 'Script MT Bold';
+  font-family       : "Script MT Bold";
+  line-height       : 1;
+  margin-block-start: 2lh;
+  margin-block-end  : 1lh;
 }
 
-.prefix,
+.affix,
 hgroup h1 {
   margin     : 0;
   line-height: 1;
 }
 
-.prefix {
-  font-size: 20pt;
+.affix {
+  font-size  : 16pt;
+  font-family: "BBC Reith Sans CD", sans-serif;
+}
+
+.suffix {
+  margin-block-start: 1lh;
 }
 
 hgroup h1 {
-  font-size         : 32pt;
-  margin-block-start: 0.6lh;
+  font-size   : 40pt;
+  margin-block: 0;
+  line-height : 1;
+
+  &.enlarge {
+    font-size: 48pt;
+  }
+
+  &.reduce {
+    font-size: 32pt;
+  }
 }
 
 .winner {
   font-family: 'BBC Reith Sans CD';
   font-size  : 64pt;
+
+  &.reduce {
+    font-size: 48pt;
+  }
 }
 
 dl {

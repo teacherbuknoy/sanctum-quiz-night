@@ -15,7 +15,7 @@ permalink: '/anniversary/2024/certificates/{{ pagination.pageNumber + 1 }}/'
   <ul>
     {% for award in awards %}
       <li>
-        <a href="/anniversary/2024/certificate/{{ award.category.title | slugify }}/">{{ award.category.prefix }}{{ ' ' if award.category.prefix }}{{ award.category.title }}</a>
+        <a href="/anniversary/2024/certificate/{{ award.category.title | slugify }}/">{{ award.category.prefix }}{{ ' ' if award.category.prefix }}{{ award.category.title }}{{ ' ' if award.category.suffix }}{{ award.category.suffix }}</a>
       </li>
     {% endfor %}
   </ul>
