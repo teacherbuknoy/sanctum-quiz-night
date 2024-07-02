@@ -1,0 +1,18 @@
+---
+title: Slides
+permalink: /slides/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html
+pagination:
+  data: collections.slides
+  size: 10
+  alias: slides
+  reverse: true
+layout: slide.njk
+---
+
+<h1>{{ title | safe }}</h1>
+
+<ol>
+  {% for item in slides %}
+    <li><a href="{{ item.url }}">{{ item.data.title | safe }}</a></li>
+  {% endfor %}
+</ol>

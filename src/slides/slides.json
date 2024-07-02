@@ -1,0 +1,4 @@
+{
+  "permalink": "/slides/{{ page.date | machineReadableDate }}/",
+  "layout": "slide.njk"
+}

@@ -1,0 +1,26 @@
+@import './base/mixins';
+@import './base/config';
+
+@layer base {
+  @import './base/reset';
+}
+
+@layer layout {}
+
+@layer components {}
+
+@layer utilities {
+  @import "utilities/alignment";
+  @import "utilities/border";
+  @import "utilities/color";
+  @import "utilities/cursors";
+  @import "utilities/display";
+  @import "utilities/gap";
+  @import "utilities/margin";
+  @import "utilities/overflow";
+  @import "utilities/padding";
+  @import "utilities/sizes";
+  @import "utilities/text";
+  @import "utilities/visibility";
+  @import "utilities/position";
+}

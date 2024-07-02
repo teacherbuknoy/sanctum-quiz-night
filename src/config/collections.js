@@ -13,5 +13,12 @@ module.exports = {
     return collections.getFilteredByGlob([
       'src/quizzes/*.md'
     ])
+  },
+  slides: collections => {
+    return collections.getFilteredByGlob([
+      'src/slides/*.md',
+      'src/slides/*.yml',
+      'src/slides/*.njk'
+    ])
   }
 }
