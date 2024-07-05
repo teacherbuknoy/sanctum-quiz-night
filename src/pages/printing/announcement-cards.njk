@@ -1,0 +1,24 @@
+---
+title: Announcement Cards
+layout: printing.njk
+styles:
+  - /assets/styles/certificates.css
+permalink: /anniversary/2024/award-cards/
+---
+
+<div class="award-cards-grid">
+  {% for award in awards[0].awards | sortByProp('index') %}
+    <article class="award-card">
+      <hgroup>
+        {% include "ui/logo.njk" %}
+        {% if award.category.prefix %}
+          <p class="affix">{{ award.category.prefix }}</p>
+        {% endif %}
+        <h2 class="reduce">{{ award.category.title }}</h2>
+        {% if award.category.suffix %}
+          <p class="affix">{{ award.category.suffix }}</p>
+        {% endif %}
+      </hgroup>
+    </article>
+  {% endfor %}
+</div>

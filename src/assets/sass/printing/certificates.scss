@@ -76,7 +76,7 @@ hgroup h1 {
   margin-block-start: 1lh;
 }
 
-hgroup h1 {
+hgroup :is(h1, .reduce, .enlarge) {
   font-size   : 40pt;
   margin-block: 0;
   line-height : 1;
@@ -137,5 +137,38 @@ footer {
     margin     : 0;
     font-family: 'BBC Reith Sans CD', sans-serif;
     font-size  : 14pt;
+  }
+}
+
+.award-cards-grid {
+  display              : grid;
+  gap                  : 0;
+  grid-auto-rows       : 50cqh;
+  grid-template-columns: 1fr 1fr;
+  place-items          : center;
+  text-align           : center;
+
+  .logo {
+    height          : 16pt;
+    margin-block-end: 12pt;
+  }
+
+  .affix {
+    font-size: 12pt;
+  }
+
+  hgroup :is(h1, .reduce, .enlarge) {
+    font-size       : 24pt;
+    line-height     : 1;
+    margin-block-end: 0.25lh;
+  }
+
+  .award-card {
+    border       : 1px dashed #0005;
+    display      : grid;
+    height       : 100%;
+    padding      : 12pt;
+    place-content: center;
+    width        : 100%;
   }
 }
