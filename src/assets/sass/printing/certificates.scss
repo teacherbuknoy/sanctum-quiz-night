@@ -154,7 +154,9 @@ footer {
   }
 
   .affix {
-    font-size: 12pt;
+    font-size       : 12pt;
+    font-family     : 'Inter', sans-serif;
+    margin-block-end: 0.25lh;
   }
 
   hgroup :is(h1, .reduce, .enlarge) {
