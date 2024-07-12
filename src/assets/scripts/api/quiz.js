@@ -157,6 +157,31 @@ class Quiz {
     }
   }
 
+  playQuestionVideo() {
+    const video = this.ui.question.querySelector('video')
+    if (video != null) {
+      video.play()
+    }
+  }
+  pauseQuestionVideo() {
+    const video = this.ui.question.querySelector('video')
+    if (video != null) {
+      video.pause()
+    }
+  }
+  playAnswerVideo() {
+    const video = this.ui.answer.querySelector('video')
+    if (video != null) {
+      video.play()
+    }
+  }
+  pauseAnswerVideo() {
+    const video = this.ui.answer.querySelector('video')
+    if (video != null) {
+      video.pause()
+    }
+  }
+
   #renderVideo(filename) {
     console.log('[VIDEO] Rendering ', filename)
     return filename != null

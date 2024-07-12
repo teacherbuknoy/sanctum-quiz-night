@@ -40,6 +40,17 @@ socket.onmessage = function (event) {
       quiz.showSlide(slideIndex)
       ui_slide_number.value = slideIndex + 1
       break
+    case 'play_question_video':
+      quiz.playQuestionVideo()
+      break;
+    case 'pause_question_video':
+      quiz.pauseQuestionVideo()
+      break
+    case 'play_answer_video':
+      quiz.playAnswerVideo()
+      break;
+    case 'pause_answer_video':
+      quiz.pauseAnswerVideo()
   }
 }
 
