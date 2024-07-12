@@ -61,9 +61,14 @@
             {% if item.answerText != null %}
               answerText: `{{ item.answerText | markdown | safe }}`,
             {% endif %}
+            videos: {
+              question: `{{ site.api.assets }}/{{ assets }}/cut/{{ item.video }}`,
+              answer: `{{ site.api.assets }}/{{ assets }}/complete/{{ item.video }}`,
+            }
           },
         {% endfor %}
       ]
+      window.assetsFolder = {{ assets | dump | safe }};
       console.log(window.questions)
     </script>
     <script src="/assets/scripts/quiz.js"></script>

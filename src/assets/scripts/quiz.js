@@ -10,8 +10,12 @@ const socket = new WebSocket('wss://sanctumapi.francisrub.io/quiz')
 socket.onmessage = function (event) {
   const data = JSON.parse(event.data)
   console.log(data)
+  const startCommands = [
+    'show_correct', 'show_answer', 'change_slide', 'start'
+  ]
 
-  if (data.command !== 'heartbeat') {
+  if (startCommands.includes(data.command)) {
+    console.log('[QUIZ] Starting quiz')
     quiz.start()
   }
 
@@ -61,6 +65,34 @@ if (isAdmin()) {
         }
       }))
     })
+  })
+
+  quiz.addEventListener('questionvideoplaying', e => {
+    socket.send(JSON.stringify({
+      scope: 'quiz',
+      command: 'play_question_video'
+    }))
+  })
+
+  quiz.addEventListener('questionvideopaused', e => {
+    socket.send(JSON.stringify({
+      scope: 'quiz',
+      command: 'pause_question_video'
+    }))
+  })
+
+  quiz.addEventListener('answervideoplaying', e => {
+    socket.send(JSON.stringify({
+      scope: 'quiz',
+      command: 'play_answer_video'
+    }))
+  })
+
+  quiz.addEventListener('answervideopaused', e => {
+    socket.send(JSON.stringify({
+      scope: 'quiz',
+      command: 'pause_answer_video'
+    }))
   })
 
   ui_slide_number.addEventListener('change', e => {

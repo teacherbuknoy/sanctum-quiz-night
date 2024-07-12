@@ -10,7 +10,10 @@ function isAdmin() {
 }
 
 class Quiz {
+  #events
+
   constructor(element, data) {
+    console.log('[QUIZ] Initialized', element, data)
     this.element = element
     this.data = data
     this.current = 0
@@ -25,6 +28,24 @@ class Quiz {
         this.element.querySelector('[data-choice=d]')
       ]
     }
+
+    this.#events = {
+      questionvideoplaying: [],
+      questionvideopaused: [],
+      answervideoplaying: [],
+      answervideopaused: []
+    }
+  }
+
+  /**
+   * @description Adds an event handler to this object
+   * @author Francis Rubio
+   * @param {'questionvideoplaying'|'questionvideopaused'|'answervideoplaying'|'answervideopaused'} event
+   * @param {Function} handler
+   * @memberof Quiz
+   */
+  addEventListener(event, handler) {
+    this.#events[event].push(handler)
   }
 
   start() {
@@ -80,8 +101,6 @@ class Quiz {
   showCurrentQuestion() {
     const item = this.data[this.current]
     console.log(item)
-    this.ui.question.innerHTML = `<p>Question #${this.current + 1}</p><p>${item.question}</p>`
-
     this.ui.answer.hidePopover()
     this.ui.answer.innerHTML = `<p>${item.answerText}</p><div class="choices for-display"><button class="correct">${item.choices.find(c => c.isCorrect).text}</button></div>`
 
@@ -91,17 +110,64 @@ class Quiz {
       this.ui.choices[idx].classList.remove('correct-for-admin')
       this.ui.choices[idx].classList.remove('correct')
       this.ui.choices[idx].classList.remove('wrong')
-      
+
       if (isAdmin() && option.isCorrect) {
         this.ui.choices[idx].classList.add('correct-for-admin')
       }
     })
+
+    this.ui.question.innerHTML = `
+        <p>Question #${this.current + 1}</p>
+        <p>${item.question}</p>
+        ${this.#renderVideo(item.videos?.question)}
+      `
+
+    const qVideo = this.ui.question.querySelector('video')
+    if (qVideo != null) {
+      qVideo.addEventListener('play', e => {
+        this.#events.questionvideoplaying.forEach(fn => fn(e))
+      })
+
+      qVideo.addEventListener('pause', e => {
+        if (!qVideo.ended) {
+          this.#events.questionvideopaused.forEach(fn => fn(e))
+        }
+      })
+    }
+
+    this.ui.answer.innerHTML = `
+        <p>${item.answerText}</p>
+        ${this.#renderVideo(item.videos?.answer)}
+        <div class="choices for-display">
+          <button class="correct">${item.choices.find(c => c.isCorrect).text}</button>
+        </div>
+      `
+
+    const aVideo = this.ui.question.querySelector('video')
+    if (aVideo != null) {
+      aVideo.addEventListener('play', e => {
+        this.#events.questionvideoplaying.forEach(fn => fn(e))
+      })
+
+      aVideo.addEventListener('pause', e => {
+        if (!aVideo.ended) {
+          this.#events.questionvideopaused.forEach(fn => fn(e))
+        }
+      })
+    }
+  }
+
+  #renderVideo(filename) {
+    console.log('[VIDEO] Rendering ', filename)
+    return filename != null
+      ? `<video src="${filename}" controls></video>`
+      : ''
   }
 
   showCorrectAnswer() {
     if (isAdmin()) {
       const btnCorrect = this.element.querySelector('[data-choice].correct-for-admin')
-      btnCorrect.classList.add('correct')      
+      btnCorrect.classList.add('correct')
     }
   }
 
