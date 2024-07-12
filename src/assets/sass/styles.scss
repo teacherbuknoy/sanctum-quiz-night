@@ -384,6 +384,10 @@ body:has(.slide-container) {
 }
 
 .slide:has(.question) {
+  grid-template-rows: 1fr min-content;
+}
+
+.slide:has(.question video) {
   grid-template-rows: 60vh 1fr;
   max-height        : 90vh;
 }
@@ -398,6 +402,7 @@ body:has(.slide-container) {
   row-gap              : .8em;
   padding-inline       : 10vw;
   place-self           : center;
+  place-content        : center;
   width                : 90vw;
   height               : 100%;
 
@@ -466,6 +471,10 @@ body:has(.slide-container) {
     @media (width < 100ch) {
       font-size: 1.25rem;
     }
+  }
+
+  @at-root .question:has(video)~& button {
+    font-size: 1rem;
   }
 }
 
@@ -692,7 +701,8 @@ body:not(.admin) .admin {
 
     @at-root body:not(.admin) & {
       .slide-container {
-        grid-row: 1/-1;
+        grid-row     : 1/-1;
+        align-content: center;
       }
     }
   }

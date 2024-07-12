@@ -119,7 +119,7 @@ class Quiz {
     this.ui.question.innerHTML = `
         <p>Question #${this.current + 1}</p>
         <p>${item.question}</p>
-        ${this.#renderVideo(item.videos?.question)}
+        ${this.#renderVideo(item.videos?.question, '/cut/')}
       `
 
     const qVideo = this.ui.question.querySelector('video')
@@ -137,7 +137,7 @@ class Quiz {
 
     this.ui.answer.innerHTML = `
         <p>${item.answerText}</p>
-        ${this.#renderVideo(item.videos?.answer)}
+        ${this.#renderVideo(item.videos?.answer, '/complete/')}
         <div class="choices for-display">
           <button class="correct">${item.choices.find(c => c.isCorrect).text}</button>
         </div>
@@ -182,11 +182,20 @@ class Quiz {
     }
   }
 
-  #renderVideo(filename) {
-    console.log('[VIDEO] Rendering ', filename)
-    return filename != null
-      ? `<video src="${filename}" ${isAdmin() ? 'controls muted' : 'controls'}></video>`
-      : ''
+  #renderVideo(filename, folder) {
+    const hasVideo = filename != null && filename.length > 0
+    console.log('[VIDEO] Rendering ', hasVideo, {
+      notNull: filename != null,
+      notEmpty: filename.length > 0,
+      length: filename.length,
+      filename
+    })
+    if (hasVideo) {
+      return `<video src="${window.assetsFolder + folder + filename}" ${isAdmin() ? 'controls muted' : 'controls'}></video>`
+    }
+    
+    console.log('[VIDEO] No video. Skipping.', filename)
+    return ''
   }
 
   showCorrectAnswer() {
