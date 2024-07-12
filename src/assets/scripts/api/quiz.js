@@ -143,15 +143,15 @@ class Quiz {
         </div>
       `
 
-    const aVideo = this.ui.question.querySelector('video')
+    const aVideo = this.ui.answer.querySelector('video')
     if (aVideo != null) {
       aVideo.addEventListener('play', e => {
-        this.#events.questionvideoplaying.forEach(fn => fn(e))
+        this.#events.answervideoplaying.forEach(fn => fn(e))
       })
 
       aVideo.addEventListener('pause', e => {
         if (!aVideo.ended) {
-          this.#events.questionvideopaused.forEach(fn => fn(e))
+          this.#events.answervideopaused.forEach(fn => fn(e))
         }
       })
     }
