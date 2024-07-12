@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title | safe }}</title>
+    {% include "meta/stylesheets.njk" %}
+  </head>
+  <body class="cover">
+    <header class="admin commands">
+      <button id="ui_refresh">Refresh current question</button>
+      <button id="ui_show_answer">Show correct answer</button>
+      <button id="ui_prev_question">&lt; Previous Question</button>
+      <button id="ui_next_question">Next Question &gt;</button>
+    </header>
+    <main class="slide-container" id="ui_slide_container">
+      <article class="slide slide--cover">
+        {% include "ui/title-card.njk" %}
+        <h2 class="title">{{ title }}</h2>
+        <button class="admin" id="ui_start_quiz">Start Quiz</button>
+      </article>
+      <article class="slide slide--question">
+        <div class="question" data-quiz="question"></div>
+        <div popover class="answer" data-quiz="answer"></div>
+        <div class="choices" data-quiz="choices">
+          <div popover id="dont-answer-here">Hindi rito sasagot. Pumunta sa Multibuzzer at makipag-unahang pumindot para makasagot.</div>
+          <button data-choice="a" popovertarget="dont-answer-here"></button>
+          <button data-choice="b" popovertarget="dont-answer-here"></button>
+          <button data-choice="c" popovertarget="dont-answer-here"></button>
+          <button data-choice="d" popovertarget="dont-answer-here"></button>
+        </div>
+      </article>
+    </main>
+    {{ content | safe }}
+    <template id="ui_slide"></template>
+    <script>
+      window.questions = {{ questions | dump | safe }};
+      console.log(window.questions)
+    </script>
+    <script src="/assets/scripts/quiz.js"></script>
+  </body>
+</html>

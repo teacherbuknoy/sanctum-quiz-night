@@ -209,24 +209,30 @@ tbody tr:nth-child(2n) {
 }
 
 #ui_winners {
-  margin       : 0;
-  padding      : 0;
-  width        : min(75%, 100ch);
-  margin-inline: auto;
+  display              : grid;
+  gap                  : 3rem;
+  grid-template-columns: auto min-content 1fr auto;
+  margin               : 0;
+  margin-block         : 3rem;
+  margin-inline        : auto;
+  padding              : 0;
+  width                : min(75%, 100ch);
 }
 
 #ui_winners li {
-  display         : flex;
-  gap             : 1rem;
-  align-items     : center;
-  background-image: radial-gradient(ellipse at center, #FFE175, #FFC194);
-  border-radius   : 1000px;
-  padding-inline  : 3ch;
-  padding-block   : 0.3ch;
-  box-shadow      : 0 0 8px rgba(0, 0, 0, .3333333333), 0 0 0 16px #fff, 0 0 24px rgba(0, 0, 0, .3333333333);
-  margin-block    : 3rem;
-  font-family     : 'Bowlby One SC', sans-serif;
-  text-transform  : uppercase;
+  align-items          : center;
+  background-image     : radial-gradient(ellipse at center, #FFE175, #FFC194);
+  border-radius        : 1000px;
+  box-shadow           : 0 0 8px rgba(0, 0, 0, 0.3333333333), 0 0 0 16px #fff, 0 0 24px rgba(0, 0, 0, 0.3333333333);
+  display              : grid;
+  font-family          : "Bowlby One SC", sans-serif;
+  gap                  : 1rem;
+  grid-column          : 1/-1;
+  grid-template-columns: subgrid;
+  margin-block         : 0;
+  padding-block        : .3ch;
+  padding-inline       : 3ch;
+  text-transform       : uppercase;
 }
 
 .ribbon {
@@ -245,6 +251,15 @@ tbody tr:nth-child(2n) {
 
 .prize {
   font-size: 3rem;
+  display  : grid;
+
+  .addon {
+    font-size: 0.8rem;
+  }
+
+  .cash {
+    line-height: 1;
+  }
 }
 
 .winner {
@@ -696,7 +711,7 @@ body:not(.admin) .admin {
 
 .player-commands {
   display: flex;
-  gap: 1ch;
+  gap    : 1ch;
 
   button {
     flex: 1;

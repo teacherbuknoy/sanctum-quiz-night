@@ -23,7 +23,12 @@ permalink: /rankings/
     initialize()
   })
 
-  const prizes = ['P 600.00', 'P 400.00', 'P 200.00']
+  //const prizes = ['P 600.00 + Discord Nitro', 'P 400.00', 'P 200.00']
+  const prizes = [
+    { cash: 600, addon: '2 months worth of Discord Nitro' },
+    { cash: 400 },
+    { cash: 200 }
+  ]
 
   function initialize() {
     populatePlayers()
@@ -59,13 +64,16 @@ permalink: /rankings/
       .slice(0, 3)
       .map((player, index) => `
       <li data-player="${player.id}">
-        <span class="prize">${prizes[index]}</span>
+        <span class="prize">
+          <span class="cash">P ${prizes[index].cash.toFixed(2)}</span>
+          <span class="addon">${prizes[index].addon ?? ''}</span>
+        </span>
         <img class="ribbon" width="200" height="200" src="/assets/images/ribbon-${index}.png" alt="${getWinPlace(index)}">
         <div class="winner">
           <span class="winner-name">${player.username}</span>
           <span class="winner-place">${getWinPlace(index)}</span>
         </div>
-        <span class="score">${player.score} pts</span>
+        <span class="score">${player.score > 0 ? player.score + ' pts' : '' }</span>
       </li>
       `)
 
