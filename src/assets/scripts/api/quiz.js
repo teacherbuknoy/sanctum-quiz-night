@@ -185,7 +185,7 @@ class Quiz {
   #renderVideo(filename) {
     console.log('[VIDEO] Rendering ', filename)
     return filename != null
-      ? `<video src="${filename}" controls></video>`
+      ? `<video src="${filename}" ${isAdmin() ? 'controls muted' : 'controls'}></video>`
       : ''
   }
 
