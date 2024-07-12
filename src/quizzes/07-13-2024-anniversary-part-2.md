@@ -4,7 +4,7 @@ title: Anniversary Edition (Round 2)
 assets: anniversary
 questions:
 - question: Anong kanta ni Ariana Grande ang kinanta ng baklang ito?
-  video: grindr.mp4
+  video: grindr.mp4.webm
   answerText: 'Greedy by Ariana Grande'
   choices:
     - text: Side to Side
@@ -41,7 +41,7 @@ questions:
       isCorrect: true
     - text: 57
 - question: Kumpletuhin ang lyrics ng kanta ni Kween Yasmin
-  video: kween-yasmin.mp4
+  video: kween-yasmin.mp4.webm
   answerText: “Sa ’yo lang!”
   choices:
     - text: Ikaw na!
@@ -116,7 +116,7 @@ questions:
       isCorrect: true
     - text: Cynthia Villar
 - question: Fill in the blanks
-  video: otlum.mp4
+  video: otlum.mp4.webm
   answerText: “kind heart”
   choices:
     - text: kind heart

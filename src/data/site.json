@@ -1,5 +1,5 @@
 {
   "api": {
-    "assets": "http://127.0.0.1:8081"
+    "assets": "https://sanctum-quiz-night-assets.pages.dev"
   }
 }

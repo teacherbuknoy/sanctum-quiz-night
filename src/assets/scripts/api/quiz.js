@@ -191,7 +191,7 @@ class Quiz {
       filename
     })
     if (hasVideo) {
-      return `<video src="${window.assetsFolder + folder + filename}" ${isAdmin() ? 'controls muted' : 'controls'}></video>`
+      return `<video src="${window.assetsFolder + folder + filename}" ${isAdmin() ? 'controls muted' : ''}></video>`
     }
     
     console.log('[VIDEO] No video. Skipping.', filename)
