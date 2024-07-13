@@ -86,13 +86,13 @@ questions:
       isCorrect: true
     - text: SM North Edsa
     - text: Ayala Center Cebu
-- question: Alin sa mga bansang ito ang tinaguriang Texting Capital of the World?
+- question: Sa Bible Stories, nang mamatay ang taksil na si Judas, sino ang pumalit sa puwesto niya sa twelve apostles?
   choices:
-    - text: Myanmar
-    - text: Philippines
+    - text: Lucas
+    - text: Matias
       isCorrect: true
-    - text: Thailand
-    - text: Malaysia
+    - text: Mateo
+    - text: Marcos
 - question: Sino ang kaisa-isang presidente ng Pilipinas na nagpatubo ng bigote habang nasa palasyo?
   choices:
     - text: Fidel V. Ramos
@@ -100,12 +100,12 @@ questions:
     - text: Joseph Estrada
       isCorrect: true
     - text: Ramon Magsaysay
-- question: Si Juan Severino Mallari ang pinakaunang Filipino serial killer. Tagasaan siya?
+- question: Sa Bible stories, sino sa mga apostol na ito ang hindi kasama sa bilang ng twelve apostles?
   choices:
-    - text: Tondo
-    - text: Cebu
-    - text: Laguna
-    - text: Pampanga
+    - text: Peter
+    - text: Judas
+    - text: John
+    - text: Paul
       isCorrect: true
 - question: Sino ang unang asawa ni Ferdinand Marcos Sr.
   answerText: Bagama't hindi sila kasal, napangasawa ni Marcos Sr. si Carmen Ortega by common-law marriage. Nagkaroon sila ng apat na anak.
