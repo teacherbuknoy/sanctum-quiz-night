@@ -1,0 +1,26 @@
+---
+title: Sanctum Quiz Night
+permalink: /game/join/
+layout: game.njk
+---
+
+<h1 class="title">Join Game!</h1>
+<form name="join-game">
+  <div class="input-group">
+    <label for="nickname">Nickname</label>
+    <input type="text" name="nickname" id="nickname">
+  </div>
+  <button type="submit" class="button">Join</button>
+</form>
+
+<script>
+  const game = window.SanctumGame.initializeWebsocket()
+  const form = document.forms['join-game']
+  
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    const nickname = form['nickname'].value
+
+    game.registerPlayer(nickname)
+  })
+</script>

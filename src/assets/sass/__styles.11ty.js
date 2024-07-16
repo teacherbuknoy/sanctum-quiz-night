@@ -9,6 +9,7 @@ class Stylesheets {
       print: 'print.scss',
       nameplates: 'printing/nameplates.scss',
       certificates: 'printing/certificates.scss',
+      games: 'games.scss',
       slides: 'slides.scss'
     }
   }
