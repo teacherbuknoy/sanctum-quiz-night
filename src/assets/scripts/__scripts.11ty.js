@@ -12,6 +12,10 @@ class Script {
     this.inputFiles = {
       index: 'index.js',
       quiz: 'quiz.js',
+      game: 'game.js',
+      oda: 'oda.js',
+      settings: 'settings.js',
+      websdk: 'websdk.js',
     }
   }
 
